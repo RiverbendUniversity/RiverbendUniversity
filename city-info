@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>City Information - Newgrove</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header>
+    <h1>About Our City</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Welcome</h2>
+      <p>Our university is located in a vibrant fictional city filled with culture, history, and opportunities. It’s a safe and friendly place where students thrive both academically and socially.</p>
+    </section>
+
+    <section>
+      <h2>Location & Climate</h2>
+      <p>The city enjoys a temperate climate with warm summers and mild winters, making it perfect for year-round outdoor activities. It is well connected by trains, buses, and airports for easy travel.</p>
+    </section>
+
+    <section>
+      <h2>Culture & Lifestyle</h2>
+      <p>Students can enjoy music festivals, museums, art galleries, and sports events throughout the year. Cafés and student-friendly restaurants make the city lively and affordable for young people.</p>
+    </section>
+
+    <section>
+      <h2>Opportunities</h2>
+      <p>The city is home to several industries that offer internships, part-time jobs, and career opportunities. Students benefit from being in a hub of innovation and creativity.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 My University | City Info Page</p>
+  </footer>
+</body>
+</html>
