@@ -166,6 +166,39 @@ ul {
   padding-left: 20px;
 }
 
+body.index-page nav ul li {
+  display: inline-block !important;
+  margin: 0 12px !important;
+}
+
+body.index-body nav ul li {
+  display: inline-block !important;
+  margin: 0 12px !important;
+}
+
+body.standard-page .page-titles ul li,
+body.standard-page nav.page-titles ul li {
+  display: block !important;
+  margin: 0 0 15px 0 !important;
+}
+
+.page-titles ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.index-page nav.top-nav ul li,
+body.index-body nav.top-nav ul li {
+  display: inline-block !important;
+  margin: 0 12px !important;
+}
+
+body.standard-page nav ul li {
+  display: block !important;
+  margin-bottom: 15px !important;
+}
+
 a:hover {
   text-decoration: underline;
 }
