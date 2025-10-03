@@ -55,7 +55,7 @@ footer {
   color: #b69803;
   flex: 1;
   min-height: 90vh;  
-  padding: 100px;
+  padding: 250px;
   width: 60%;
   margin: 10px;
   border-radius: 12px;
@@ -64,7 +64,7 @@ footer {
 }
 
 .sidebar {
-  width: 300px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   background-color: rgba(27, 55, 58, 0.90);
