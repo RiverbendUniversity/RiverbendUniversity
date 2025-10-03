@@ -57,12 +57,47 @@ body.standard-page {
 }
 
 .page-titles ul li {
-  margin: 10px 0;
+  margin-bottom: 15px;
 }
 
 .page-titles ul li a {
   color: #8be9c2;
   text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+}
+
+.page-titles ul li a:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+  text-shadow: 0 0 8px #8be9c2, 0 0 12px #8be9c2;
+}
+
+.page-titles ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+.page-titles ul li a:hover::after {
+  width: 100%;
+}
+
+.page-titles ul li a.active {
+  color: #ffffff;
+}
+
+.page-titles ul li a.active::after {
+  width: 100%;
+  background-color: #8be9c2;
 }
 
 .content {
