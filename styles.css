@@ -125,8 +125,8 @@ nav ul {
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 10px;
+  display: block;
+  margin-bottom: 15px;
 }
 
 nav ul li a {
