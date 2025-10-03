@@ -166,6 +166,27 @@ ul {
   padding-left: 20px;
 }
 
+.page-titles ul li a,
+nav.top-nav ul li a,
+body.index-page nav ul li a,
+body.index-body nav ul li a {
+  color: #8be9c2;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.page-titles ul li a:hover,
+nav.top-nav ul li a:hover,
+body.index-page nav ul li a:hover,
+body.index-body nav ul li a:hover {
+  color: #ffd369;
+  transform: scale(1.08);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 body.index-page nav ul li {
   display: inline-block !important;
   margin: 0 12px !important;
