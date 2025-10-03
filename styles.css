@@ -55,21 +55,22 @@ footer {
   color: #b69803;
   flex: 1;
   min-height: 90vh;  
-  padding: 60px;
+  padding: 100px;
   width: 60%;
-  margin: 20px;
+  margin: 10px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   box-sizing: border-box;
 }
 
 .sidebar {
-  width: 350px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   background-color: rgba(27, 55, 58, 0.90);
   padding: 20px;
   box-sizing: border-box;
+  margin-left: -20px;
 }
 
 .sidebar header {
