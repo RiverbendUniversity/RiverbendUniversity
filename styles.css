@@ -6,6 +6,8 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Merriweather', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
   background-color: #0b1220;
@@ -15,19 +17,8 @@ body {
   align-items: center;
 }
 
-.content {
-  background-color: rgba(27, 55, 58, 0.80);
-  color: #b69803;
-  min-height: 90vh;  
-  padding: 40px;
-  width: 60%;
-  margin: 0px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
 header {
-  background-color: #13202a;
+  background-color: #022125;
   padding: 20px;
   text-align: center;
 }
@@ -52,8 +43,46 @@ main {
 }
 
 footer {
-  background-color: #13202a;
+  background-color: #022125;
   color: #9fbfb0;
   text-align: center;
   padding: 10px;
+}
+
+.content {
+  background-color: rgba(27, 55, 58, 0.80);
+  color: #b69803;
+  min-height: 90vh;  
+  padding: 40px;
+  width: 60%;
+  margin: 0px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.sidebar {
+  width: 220px;
+  background-color: rgba(27, 55, 58, 0.90);
+  padding: 20px;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+}
+
+.index-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(27, 55, 58, 0.7);
+  padding: 40px;
+  text-align: center;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
