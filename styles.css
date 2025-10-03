@@ -167,24 +167,21 @@ ul {
 }
 
 .page-titles ul li a,
-nav.top-nav ul li a,
-body.index-page nav ul li a,
-body.index-body nav ul li a {
+body.index-page nav ul li a {
   color: #8be9c2;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: color 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 8px 14px;
   border-radius: 6px;
 }
 
 .page-titles ul li a:hover,
-nav.top-nav ul li a:hover,
-body.index-page nav ul li a:hover,
-body.index-body nav ul li a:hover {
-  color: #ffd369;
+body.index-page nav ul li a:hover {
+  color: #ffd369; /* gold-ish hover text */
   transform: scale(1.08);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15); /* soft light effect */
+  box-shadow: 0 0 8px rgba(255, 211, 105, 0.6); /* subtle glow */
 }
 
 body.index-page nav ul li {
