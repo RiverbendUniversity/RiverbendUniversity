@@ -12,6 +12,14 @@ body {
   color: #e6eef6;
 }
 
+.content {
+  background-color: rgba(27, 55, 58, 0.80);
+  padding: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
 header {
   background-color: #13202a;
   padding: 20px;
