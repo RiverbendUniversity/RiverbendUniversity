@@ -1,162 +1,87 @@
-body.index-page {
-  display: block;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  line-height: 1.6;
   background-color: #002b31;
   background-image: url('images/university-background.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Merriweather', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
   color: #e6eef6;
-}
-
-body.index-page header {
-  background-color: #022125;
-  padding: 20px;
-  text-align: center;
-}
-
-body.index-page nav ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-}
-
-body.index-page nav ul li {
-  display: inline;
-  margin: 0 10px;
-}
-
-body.index-page nav ul li a {
-  color: #8be9c2;
-  text-decoration: none;
-}
-
-body.index-page .index-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(27, 55, 58, 0.7);
-  padding: 40px;
-  margin: 20px auto;
-  border-radius: 12px;
-  max-width: 900px;
-  text-align: center;
-}
-
-body.index-page main {
-  padding: 20px;
-}
-
-body.index-page footer {
-  background-color: #022125;
-  color: #9fbfb0;
-  text-align: center;
-  margin-top: auto;
-  padding: 10px;
 }
 
 body.standard-page {
-  background-color: #002b31;
-  background-image: url('images/university-background.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  font-family: 'Merriweather', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  color: #e6eef6;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-body.standard-page .page-container {
+.page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
 }
 
-body.standard-page .main-area {
+.main-area {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  flex: 1;
 }
 
-body.standard-page .sidebar {
+.sidebar {
   width: 220px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   background-color: rgba(27, 55, 58, 0.90);
   padding: 20px;
   box-sizing: border-box;
-  margin-left: -20px;
-  border-radius: 12px;
 }
 
-body.standard-page .sidebar header {
+.sidebar header {
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
 }
 
-body.standard-page .page-titles ul {
-  list-style-type: none;
+.page-titles ul {
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-body.standard-page .page-titles ul li {
-  margin-bottom: 10px;
+.page-titles ul li {
+  margin: 10px 0;
 }
 
-body.standard-page .page-titles ul li a {
+.page-titles ul li a {
   color: #8be9c2;
   text-decoration: none;
 }
 
-body.standard-page .content {
+.content {
   flex: 1;
-  max-width: 900px;
-  padding: 40px;
-  margin: 10px;
-  min-height: 80vh;
-  max-height: 90vh;
   background-color: rgba(27, 55, 58, 0.80);
   color: #b69803;
+  padding: 30px;
+  box-sizing: border-box;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  box-sizing: border-box;
-}
-
-body.standard-page footer {
-  background-color: #022125;
-  color: #9fbfb0;
-  text-align: center;
-  margin-top: auto; /* keeps footer at bottom */
-  padding: 10px;
-  flex-shrink: 0;
+  overflow: visible;
+  min-height: 80vh;
+  max-height: 90vh;
 }
 
 header {
   background-color: #022125;
   padding: 20px;
   text-align: center;
-}
-
-footer {
-  background-color: #022125;
-  color: #9fbfb0;
-  text-align: center;
-  padding: 10px;
 }
 
 nav ul {
@@ -174,6 +99,33 @@ nav ul li a {
   text-decoration: none;
 }
 
-main {
-  padding: 20px;
+footer {
+  background-color: #022125;
+  color: #9fbfb0;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.index-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(27, 55, 58, 0.7);
+  padding: 40px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
