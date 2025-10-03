@@ -1,6 +1,6 @@
 body {
   background-color: #002b31;
-  background-image: url('images/university-background.png');
+  background-image: url('images/university-background.png') center center / cover fixed no-repeat;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -26,10 +26,39 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+.index-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(27, 55, 58, 0.80);
+  padding: 40px;
+  text-align: center;
+}
+
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: rgba(27, 55, 58, 0.80);
+  padding: 20px;
+}
+
 header {
-  background-color: #13202a;
+  background-color: rgba(27, 55, 58, 0.80);
   padding: 20px;
   text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
 nav ul {
@@ -52,8 +81,8 @@ main {
 }
 
 footer {
-  background-color: #13202a;
-  color: #9fbfb0;
+  background-color: rgba(27, 55, 58, 0.80);
   text-align: center;
-  padding: 10px;
+  padding: 15px;
+  margin-top: auto;
 }
