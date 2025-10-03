@@ -10,12 +10,15 @@ body {
   padding: 0;
   background-color: #0b1220;
   color: #e6eef6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {
   background-color: rgba(27, 55, 58, 0.80);
   color: #b69803;
-  min-height: 90vh;
+  min-height: 90vh;  
   padding: 40px;
   width: 60%;
   margin: 0px;
