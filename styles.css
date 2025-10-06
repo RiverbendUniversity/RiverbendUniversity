@@ -30,9 +30,19 @@ body.index-page .index-body {
   padding: 40px;
   margin: 0 auto;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   max-width: 850px;
   width: 75%;
+}
+
+.index-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(27, 55, 58, 0.7);
+  padding: 40px;
+  text-align: center;
 }
 
 .page-container {
@@ -76,19 +86,32 @@ body.index-page .index-body {
   margin-bottom: 15px;
 }
 
-.page-titles ul li a {
+.page-titles ul li a,
+body.index-page nav ul li a {
   color: #8be9c2;
   text-decoration: none;
   font-weight: bold;
   position: relative;
   display: inline-block;
-  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s, background-color 0.3s;
 }
 
-.page-titles ul li a:hover {
+.page-titles ul li a:hover,
+body.index-page nav ul li a:hover {
+  color: #ffd369;
+  transform: scale(1.08);
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(255, 211, 105, 0.6);
+}
+
+.page-titles ul li a.active {
   color: #ffffff;
-  transform: scale(1.05);
-  text-shadow: 0 0 8px #8be9c2, 0 0 12px #8be9c2;
+}
+.page-titles ul li a.active::after {
+  width: 100%;
+  background-color: #8be9c2;
 }
 
 .page-titles ul li a::after {
@@ -102,18 +125,19 @@ body.index-page .index-body {
   bottom: -3px;
   left: 0;
 }
-
 .page-titles ul li a:hover::after {
   width: 100%;
 }
 
-.page-titles ul li a.active {
-  color: #ffffff;
+body.index-page nav ul li {
+  display: inline-block;
+  margin: 0 12px;
 }
 
-.page-titles ul li a.active::after {
-  width: 100%;
-  background-color: #8be9c2;
+body.standard-page .page-titles ul li,
+body.standard-page nav.page-titles ul li {
+  display: block;
+  margin: 0 0 15px 0;
 }
 
 .content {
@@ -123,7 +147,7 @@ body.index-page .index-body {
   padding: 30px;
   box-sizing: border-box;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   overflow: visible;
   min-height: 80vh;
   max-height: 90vh;
@@ -135,32 +159,6 @@ header {
   text-align: center;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.index-body nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.standard-page nav ul li {
-  display: block;
-  margin-bottom: 15px;
-}
-
-nav ul li a {
-  color: #8be9c2;
-  text-decoration: none;
-}
-
-.main-area a:hover {
-  color: #8be9c2;
-  text-shadow: 0 0 8px #8be9c2;
-  transition: all 0.3s ease;
-}
-
 footer {
   background-color: #022125;
   color: #9fbfb0;
@@ -168,16 +166,6 @@ footer {
   padding: 10px;
   margin-top: auto;
   flex-shrink: 0;
-}
-
-.index-body {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(27, 55, 58, 0.7);
-  padding: 40px;
-  text-align: center;
 }
 
 h1, h2, h3 {
@@ -188,55 +176,10 @@ ul {
   padding-left: 20px;
 }
 
-.page-titles ul li a,
-body.index-page nav ul li a {
+.main-area a:hover {
   color: #8be9c2;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 6px;
-}
-
-.page-titles ul li a:hover,
-body.index-page nav ul li a:hover {
-  color: #ffd369; /* gold-ish hover text */
-  transform: scale(1.08);
-  background-color: rgba(255, 255, 255, 0.15); /* soft light effect */
-  box-shadow: 0 0 8px rgba(255, 211, 105, 0.6); /* subtle glow */
-}
-
-body.index-page nav ul li {
-  display: inline-block !important;
-  margin: 0 12px !important;
-}
-
-body.index-body nav ul li {
-  display: inline-block !important;
-  margin: 0 12px !important;
-}
-
-body.standard-page .page-titles ul li,
-body.standard-page nav.page-titles ul li {
-  display: block !important;
-  margin: 0 0 15px 0 !important;
-}
-
-.page-titles ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-body.index-page nav.top-nav ul li,
-body.index-body nav.top-nav ul li {
-  display: inline-block !important;
-  margin: 0 12px !important;
-}
-
-body.standard-page nav ul li {
-  display: block !important;
-  margin-bottom: 15px !important;
+  text-shadow: 0 0 8px #8be9c2;
+  transition: all 0.3s ease;
 }
 
 a:hover {
