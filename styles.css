@@ -214,3 +214,46 @@ a:hover {
   color: #ffd369;
   text-shadow: 0 0 6px rgba(255, 211, 105, 0.6);
 }
+
+.subcategory {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.has-sub:hover .subcategory {
+  display: block;
+}
+
+.subcategory li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: 0.95em;
+  color: #8be9c2;
+  transition: all 0.3s ease;
+}
+
+.subcategory li::before {
+  content: '→'; 
+  position: absolute;
+  left: 0;
+  color: #ffd369;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.subcategory li:hover::before {
+  transform: translateX(3px);
+  color: #ffffff;
+}
+
+.subcategory li:hover {
+  color: #ffd369;
+  text-shadow: 0 0 6px #ffd369;
+}
+
+.has-sub > a:hover {
+  color: #ffd369;
+  text-shadow: 0 0 6px #ffd369;
+}
