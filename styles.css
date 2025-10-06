@@ -218,11 +218,13 @@ a:hover {
 .subcategory {
   display: none;
   list-style: none;
-  padding-left: 20px;
-  margin-top: 5px;
+  padding-left: 25px;
+  margin: 8px 0 10px 0;
+  border-left: 2px solid rgba(139, 233, 194, 0.3);
 }
 
-.has-sub:hover .subcategory {
+.has-sub:hover .subcategory,
+.has-sub.active .subcategory {
   display: block;
 }
 
@@ -256,4 +258,12 @@ a:hover {
 .has-sub > a:hover {
   color: #ffd369;
   text-shadow: 0 0 6px #ffd369;
+}
+
+.has-sub.active .subcategory {
+  display: block;
+}
+
+.has-sub.active .subcategory {
+  display: block;
 }
