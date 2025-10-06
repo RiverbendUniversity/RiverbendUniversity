@@ -27,12 +27,12 @@ body.index-page .index-body {
   text-align: center;
   background-color: rgba(27, 55, 58, 0.75);
   color: #e6eef6;
-  padding: 40px;
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-  max-width: 850px;
-  width: 75%;
+  padding: 55px;
+  margin: 60px auto;
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  width: 60%;
 }
 
 .index-body {
