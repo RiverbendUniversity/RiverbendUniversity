@@ -82,7 +82,7 @@ body.index-page .index-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: flex-start;
   background-color: rgba(27, 55, 58, 0.75);
   color: #e6eef6;
   padding: 60px;
