@@ -1,3 +1,4 @@
+/* === GLOBAL === */
 body {
   margin: 0;
   padding: 0;
@@ -13,12 +14,12 @@ body {
   color: #e6eef6;
 }
 
-h1, h2, h3 {
-  margin-top: 0;
-}
-
-ul {
-  padding-left: 20px;
+/* === INDEX PAGE === */
+body.index-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 body.index-page .index-body {
@@ -28,15 +29,50 @@ body.index-page .index-body {
   align-items: center;
   background-color: rgba(27, 55, 58, 0.75);
   color: #e6eef6;
-  padding: 55px;
+  padding: 60px;
   margin: 60px auto;
   border-radius: 16px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
-  max-width: 800px;
-  width: 80%;
+  box-shadow: 0 0 25px rgba(139, 233, 194, 0.4);
+  max-width: 850px;
+  width: 75%;
   text-align: left;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1s ease;
 }
 
+body.index-page nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.index-page nav ul li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+body.index-page nav ul li a {
+  color: #8be9c2;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+body.index-page nav ul li a:hover {
+  color: #ffd369;
+  text-shadow: 0 0 12px #ffd369;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === STANDARD PAGE (Sidebar layout) === */
 body.standard-page {
   display: flex;
   justify-content: center;
@@ -58,34 +94,21 @@ body.standard-page {
   flex: 1;
 }
 
-.content {
-  flex: 1;
-  background-color: rgba(27, 55, 58, 0.8);
-  color: #b69803;
-  padding: 30px;
-  box-sizing: border-box;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  overflow: visible;
-  min-height: 80vh;
-  max-height: 90vh;
-}
-
 .sidebar {
-  width: 220px;
+  width: 240px;
   display: flex;
   flex-direction: column;
   background-color: rgba(27, 55, 58, 0.9);
   padding: 20px;
-  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .sidebar header {
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
-  color: #e6eef6;
+  margin-bottom: 18px;
 }
 
 .page-titles ul {
@@ -95,89 +118,82 @@ body.standard-page {
 }
 
 .page-titles ul li {
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
+/* --- Links --- */
 .page-titles ul li a {
   color: #8be9c2;
   text-decoration: none;
   font-weight: bold;
-  display: block;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: 6px;
-  transition: color 0.3s, transform 0.3s, text-shadow 0.3s, background-color 0.3s;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .page-titles ul li a:hover {
   color: #ffd369;
-  transform: scale(1.08);
-  background-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 8px rgba(255, 211, 105, 0.6);
+  text-shadow: 0 0 6px #ffd369;
 }
 
 .page-titles ul li a.active {
   color: #ffffff;
+  background-color: rgba(255,255,255,0.1);
 }
 
+/* --- Subcategory list --- */
 .subcategory {
   display: none;
   list-style: none;
   padding-left: 25px;
   margin: 8px 0 10px 0;
-  border: none;
 }
 
-.has-sub:hover .subcategory,
 .has-sub.active .subcategory {
   display: block;
 }
 
 .subcategory li {
-  position: relative;
   margin-bottom: 10px;
-  padding-left: 20px;
+  padding-left: 10px;
   font-size: 0.95em;
   color: #8be9c2;
   transition: all 0.3s ease;
-  display: block;
 }
 
 .subcategory li::before {
-  content: '→'; 
-  position: absolute;
-  left: 0;
+  content: "→ ";
   color: #ffd369;
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.subcategory li:hover::before {
-  transform: translateX(3px);
-  color: #ffffff;
+.subcategory li a {
+  color: #8be9c2;
+  text-decoration: none;
 }
 
-.subcategory li:hover {
+.subcategory li a:hover {
   color: #ffd369;
-  text-shadow: 0 0 6px #ffd369;
 }
 
-.has-sub > a:hover,
-.has-sub.active > a {
-  color: #ffd369;
-  text-shadow: 0 0 6px #ffd369;
+/* --- Content --- */
+.content {
+  flex: 1;
+  background-color: rgba(27, 55, 58, 0.8);
+  color: #b69803;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: visible;
+  min-height: 80vh;
 }
 
-header {
-  background-color: #022125;
-  padding: 20px;
-  text-align: center;
-}
-
+/* --- Footer --- */
 footer {
   background-color: #022125;
   color: #9fbfb0;
   text-align: center;
   padding: 15px;
   margin-top: 40px;
-  flex-shrink: 0;
-  width: 100%;
+  border-radius: 0 0 12px 12px;
 }
