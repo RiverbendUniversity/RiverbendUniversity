@@ -27,7 +27,7 @@ body.index-page {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  text-align: left;
+  text-align: center;
 }
 
 body.index-page header.top-header h1 {
@@ -40,7 +40,7 @@ body.index-page nav ul {
   padding: 0;
   margin: 0 0 40px 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 20px;
 }
 
