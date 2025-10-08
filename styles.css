@@ -52,9 +52,8 @@ body.index-page nav ul li a {
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
-  text-shadow: 0 0 8px rgba(139, 233, 194, 0.6),
-               0 0 12px rgba(139, 233, 194, 0.5),
-               0 0 20px rgba(139, 233, 194, 0.4);
+  text-shadow: 0 0 8px rgba(139, 233, 194, 0.4),
+               0 0 12px rgba(139, 233, 194, 0.3),               
 }
 
 body.index-page nav ul li a::after {
@@ -146,9 +145,8 @@ body.standard-page {
   display: inline-block;
   transition: all 0.3s ease;
   position: relative;
-  text-shadow: 0 0 8px rgba(139, 233, 194, 0.6),
-               0 0 12px rgba(139, 233, 194, 0.5),
-               0 0 20px rgba(139, 233, 194, 0.4);
+  text-shadow: 0 0 8px rgba(139, 233, 194, 0.4),
+               0 0 12px rgba(139, 233, 194, 0.3),             
 }
 
 .page-titles ul li a::after {
