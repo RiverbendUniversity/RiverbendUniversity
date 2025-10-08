@@ -20,13 +20,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === PAGE TITLES GLOW === */
-h1, h2 {
-  text-shadow: 0 0 8px rgba(139, 233, 194, 0.6),
-               0 0 12px rgba(139, 233, 194, 0.5),
-               0 0 20px rgba(139, 233, 194, 0.4);
-}
-
 /* === INDEX PAGE === */
 body.index-page {
   display: flex;
@@ -90,6 +83,14 @@ body.index-page .index-body {
   text-align: left;
   backdrop-filter: blur(6px);
   animation: fadeIn 1s ease;
+}
+
+/* === GLOW ONLY FOR PAGE TITLES === */
+.index-body h2,           /* Index page sections */
+.content h1              /* Standard pages main heading */ {
+  text-shadow: 0 0 8px rgba(139, 233, 194, 0.6),
+               0 0 12px rgba(139, 233, 194, 0.5),
+               0 0 20px rgba(139, 233, 194, 0.4);
 }
 
 /* === STANDARD PAGES === */
@@ -214,4 +215,14 @@ footer {
 
 .subcategory li::before {
   content: "→ ";
-  color:
+  color: #ffd369;
+}
+
+.subcategory li a {
+  color: #8be9c2;
+  text-decoration: none;
+}
+
+.subcategory li a:hover {
+  color: #ffd369;
+}
