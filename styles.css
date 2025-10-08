@@ -33,7 +33,204 @@ body.index-page header.top-header h1 {
   margin: 40px 0 20px 0;
 }
 
-/* Navigation links with hover line animation and glow */
+/* Navigation links with hover line animation and softer glow */
+body.index-page nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+body.index-page nav ul li a {
+  color: #8be9c2;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-shadow: 
+    0 0 4px rgba(139, 233, 194, 0.4),
+    0 0 8px rgba(139, 233, 194, 0.3);
+}
+
+body.index-page nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffd369;
+  transition: width 0.3s ease;
+}
+
+body.index-page nav ul li a:hover::after {
+  width: 100%;
+}
+
+body.index-page nav ul li a.active::after {
+  width: 100%;
+}
+
+/* Main content box */
+body.index-page .index-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(27, 55, 58, 0.75);
+  color: #e6eef6;
+  padding: 60px;
+  margin: 40px auto;
+  border-radius: 16px;
+  max-width: 850px;
+  width: 75%;
+  text-align: left;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1s ease;
+}
+
+/* === STANDARD PAGES === */
+body.standard-page {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(27, 55, 58, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease;
+  flex-shrink: 0;
+}
+
+.sidebar header {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* Page titles in sidebar with softer static glow */
+.page-titles ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-titles ul li {
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.page-titles ul li a {
+  color: #8be9c2;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+  text-shadow: 
+    0 0 4px rgba(139, 233, 194, 0.4),
+    0 0 8px rgba(139, 233, 194, 0.3);
+}
+
+.page-titles ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffd369;
+  transition: width 0.3s ease;
+}
+
+.page-titles ul li a:hover::after {
+  width: 100%;
+}
+
+.page-titles ul li a.active {
+  color: #ffffff;
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* === MAIN CONTENT BOX === */
+.content {
+  flex: 1;
+  background-color: rgba(27, 55, 58, 0.8);
+  color: #b69803;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: visible;
+  min-height: 80vh;
+  animation: fadeIn 1s ease;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #022125;
+  color: #9fbfb0;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  border-radius: 0 0 12px 12px;
+}
+
+/* === SUBCATEGORY LIST === */
+.subcategory {
+  display: none;
+  list-style: none;
+  padding-left: 25px;
+  margin: 8px 0 10px 0;
+}
+
+.has-sub.active .subcategory {
+  display: block;
+}
+
+.subcategory li {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-size: 0.95em;
+  color: #8be9c2;
+  transition: all 0.3s ease;
+}
+
+.subcategory li::before {
+  content: "→ ";
+  color: #ffd369;
+}
+
+.subcategory li a {
+  color: #8be9c2;
+  text-decoration: none;
+}
+
+.subcategory li a:hover {
+  color: #ffd369;
+}
 body.index-page nav ul {
   list-style: none;
   padding: 0;
