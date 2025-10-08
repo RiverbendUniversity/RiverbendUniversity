@@ -40,7 +40,7 @@ body.index-page nav ul {
   padding: 0;
   margin: 0 0 40px 0;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -82,7 +82,7 @@ body.index-page .index-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   background-color: rgba(27, 55, 58, 0.75);
   color: #e6eef6;
   padding: 60px;
