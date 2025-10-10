@@ -1,15 +1,11 @@
-/* === styles.css — fixed version === */
+/* === styles.css — robust, single-file fix === */
 
-/* === GLOBAL === */
+/* ===== RESET & GLOBAL ===== */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   margin: 0;
@@ -24,22 +20,19 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: #e6eef6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Generic link baseline */
-a {
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+a { text-decoration: none; transition: all 0.22s ease; }
 
-/* Fade-in shared animation */
+/* common fade-in */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========== INDEX PAGE SPECIFIC ========== */
-/* layout container for index pages */
+/* ===== INDEX PAGE (header + nav + centered box) ===== */
 body.index-page {
   display: flex;
   flex-direction: column;
@@ -47,84 +40,77 @@ body.index-page {
   min-height: 100vh;
 }
 
-/* Full-width translucent header (main title + nav) */
-/* uses backdrop-filter so the background image and color blend better */
+/* full-width translucent header behind main title + nav (blends with BG) */
 body.index-page .top-header {
   width: 100%;
-  padding: 20px 0;
+  padding: 18px 0;
   text-align: center;
-  background-color: rgba(0, 43, 49, 0.45); /* translucent — blends with background */
+  background-color: rgba(0, 33, 36, 0.45); /* subtle, blends with image */
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,0.02);
-  /* keep subtle outer shadow for separation */
-  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 
-/* main title — no glow */
+/* main heading (no glow) */
 body.index-page .top-header h1 {
-  margin: 0 0 12px 0;
-  font-size: 2.4rem;
+  margin: 0 0 10px 0;
+  font-size: 2.2rem;
   color: #e6eef6;
-  line-height: 1.05;
+  line-height: 1.02;
+  text-shadow: none;
 }
 
-/* nav (page titles) row — inside the full-width header */
+/* nav row inside the full-width header */
 body.index-page nav ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin: 0;
-  padding: 0;
 }
 
-body.index-page nav ul li {
-  position: relative;
-  display: inline-block;
-}
+/* nav link styling — glow only on link text */
+body.index-page nav ul li { position: relative; display: inline-block; }
 
-/* Nav link style: soft glow (text-shadow) only on the links */
 body.index-page nav ul li a {
   color: #8be9c2;
   font-weight: 700;
-  font-size: 1.05rem;
   padding: 6px 10px;
   border-radius: 6px;
-  text-shadow: 0 0 4px rgba(139,233,194,0.32); /* softer glow */
   display: inline-block;
+  text-shadow: 0 0 4px rgba(139,233,194,0.32); /* subtle glow */
+  font-size: 1.02rem;
 }
 
-/* Underline animation (left -> right) for index nav */
+/* underline animation for index nav (left->right) */
 body.index-page nav ul li a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
-  height: 2px;
   width: 0;
+  height: 2px;
   background: #ffd369;
   transition: width 0.28s ease;
 }
-
 body.index-page nav ul li a:hover::after,
-body.index-page nav ul li a.active::after {
-  width: 100%;
-}
+body.index-page nav ul li a.active::after { width: 100%; }
 
 body.index-page nav ul li a:hover {
   color: #ffd369;
   transform: scale(1.03);
-  text-shadow: 0 0 8px rgba(255,211,105,0.45);
+  text-shadow: 0 0 8px rgba(255,211,105,0.36);
 }
 
-/* Main centered content box for index page */
+/* index main content box (centered) — no colored glow, neutral shadow */
 body.index-page .index-body {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* left-align text inside box */
   justify-content: center;
-  align-items: flex-start; /* left-align text inside */
-  background-color: rgba(27, 55, 58, 0.75);
+  background-color: rgba(27,55,58,0.75);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   color: #e6eef6;
@@ -132,48 +118,33 @@ body.index-page .index-body {
   margin: 60px auto;
   border-radius: 14px;
   max-width: 900px;
-  width: 85%;
+  width: 84%;
   text-align: left;
-  animation: fadeIn 0.9s ease;
-  /* neutral shadow for depth, not colored glow */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.55);
+  animation: fadeIn 0.85s ease;
 }
 
-/* Make sure headings inside index-body don't receive the global link glow */
+/* ensure headings and paragraphs inside index box don't pick up link glow */
 body.index-page .index-body h1,
 body.index-page .index-body h2,
-body.index-page .index-body p {
-  text-shadow: none;
-}
+body.index-page .index-body p { text-shadow: none; }
 
-/* Full-width translucent footer for index and other pages (keeps consistent) */
-/* Place this rule later so footer everywhere matches */
-footer {
-  width: 100%;
-  background-color: rgba(0, 43, 49, 0.45);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  color: #9fbfb0;
-  text-align: center;
-  padding: 18px 12px;
-  margin-top: 40px;
-  border-radius: 0;
-  box-shadow: 0 -6px 18px rgba(0,0,0,0.35);
-}
+/* ===== STANDARD PAGES (sidebar left / content right) ===== */
+/* Use a flexible, wrap-capable approach so HTML variations (with/without .main-area)
+   are all handled and footers inside .page-container won't break layout. */
 
-/* ========== STANDARD PAGES (sidebar layout) ========== */
-/* Ensure all standard pages use a row layout for sidebar+content.
-   This prevents "jumbled" stacking even if HTML uses .main-area or not. */
 body.standard-page {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
+  min-height: 100vh;
 }
 
-/* page-container as outer wrapper — set to a row layout so sidebar sits left */
+/* page-container: row with wrapping; children may be .main-area or direct .sidebar/.content */
 body.standard-page .page-container {
   display: flex;
-  flex-direction: row;   /* put sidebar and content side-by-side */
+  flex-direction: row;
+  flex-wrap: wrap;          /* allow footer to wrap to next row if it's inside the container */
   gap: 20px;
   width: 100%;
   max-width: 1200px;
@@ -182,60 +153,52 @@ body.standard-page .page-container {
   box-sizing: border-box;
 }
 
-/* Support older templates that use .main-area wrapper:
-   if a .main-area exists inside .page-container, it should be flex row */
+/* If your HTML uses .main-area, make it consume a full row and arrange its children horizontally */
 body.standard-page .page-container .main-area {
+  flex: 1 1 100%;
   display: flex;
   flex-direction: row;
   gap: 20px;
-  width: 100%;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
-/* Sidebar styles (left column) */
+/* Sidebar (works both as direct child or inside .main-area) */
 .sidebar {
+  flex: 0 0 240px;      /* fixed column width */
   width: 240px;
   min-width: 180px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(27, 55, 58, 0.9);
+  background-color: rgba(27,55,58,0.9);
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.38);
   align-self: flex-start;
+  overflow: visible;    /* ensure dropdowns/subcategories are visible */
 }
 
-/* Sidebar main title: ONLY this gets a translucent rectangle with blur */
+/* Sidebar main title: ONLY this has the small translucent rectangle */
 .sidebar header {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 700;
-  text-align: center;
   color: #e6eef6;
-  margin-bottom: 16px;
-  background-color: rgba(0, 43, 49, 0.5); /* translucent rectangle */
+  text-align: center;
+  margin-bottom: 14px;
+  background-color: rgba(0,33,36,0.45);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  padding: 10px 8px;
+  padding: 8px;
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.02);
 }
 
-/* The list of page links (no background rectangle behind each link) */
-.page-titles {
-  margin-top: 6px;
-}
+/* page-titles list (links) — no boxes behind each link */
+.page-titles { margin-top: 6px; }
+.page-titles ul { list-style: none; padding: 0; margin: 0; }
+.page-titles ul li { margin-bottom: 12px; position: relative; }
 
-.page-titles ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.page-titles ul li {
-  margin-bottom: 12px;
-  position: relative;
-}
-
-/* Soft glow only on the link text (NOT on content areas) */
+/* Soft glow only on link text (NOT on content boxes) */
 .page-titles ul li a {
   color: #8be9c2;
   font-weight: 700;
@@ -245,22 +208,19 @@ body.standard-page .page-container .main-area {
   text-shadow: 0 0 4px rgba(139,233,194,0.32);
 }
 
-/* underline hover / left->right animation for sidebar links */
+/* Underline animation for sidebar links */
 .page-titles ul li a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
-  height: 2px;
   width: 0;
+  height: 2px;
   background: #ffd369;
   transition: width 0.28s ease;
 }
-
 .page-titles ul li a:hover::after,
-.page-titles ul li a.active::after {
-  width: 100%;
-}
+.page-titles ul li a.active::after { width: 100%; }
 
 .page-titles ul li a:hover {
   color: #ffd369;
@@ -268,57 +228,83 @@ body.standard-page .page-container .main-area {
   text-shadow: 0 0 8px rgba(255,211,105,0.36);
 }
 
-/* Subcategory items (kept visually simple) */
-.subcategory {
+/* Subcategory (dropdown under a 'has-sub' item) */
+/* Initially hidden; shown ONLY when the parent LI has .has-sub.active */
+.page-titles ul li .subcategory {
   display: none;
-  padding-left: 18px;
-  margin-top: 6px;
+  margin-top: 8px;
+  padding-left: 14px;
+  list-style: none;
+  gap: 6px;
 }
 
-.has-sub.active .subcategory {
+.page-titles ul li.has-sub.active > .subcategory {
   display: block;
 }
 
-.subcategory li {
+/* subcategory items styling */
+.page-titles ul li .subcategory li {
   margin-bottom: 8px;
-  font-size: 0.95rem;
   color: #8be9c2;
+  font-size: 0.95rem;
 }
 
-/* Main content area (right column) */
+.page-titles ul li .subcategory li a {
+  color: #8be9c2;
+  padding: 4px 6px;
+  display: inline-block;
+}
+
+/* ===== Content area (right column) ===== */
+/* Both when inside .main-area or when direct child of .page-container */
 .content {
   flex: 1 1 auto;
-  background-color: rgba(27, 55, 58, 0.82);
+  min-width: 260px;
+  background-color: rgba(27,55,58,0.82);
   color: #b69803;
   padding: 28px;
   border-radius: 12px;
-  /* neutral shadow — prevents colored "glow" on content */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-  min-height: 70vh;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45); /* neutral shadow, no colored glow */
+  min-height: 68vh;
   animation: fadeIn 0.9s ease;
+  overflow: visible;
 }
 
-/* ensure headings and paragraphs inside content do not catch link glow */
-.content h1, .content h2, .content p, .content li {
-  text-shadow: none;
+/* ensure headings inside the main content do not inherit link glow */
+.content h1, .content h2, .content p, .content li { text-shadow: none; }
+
+/* ===== Footer handling (works if footer is inside or outside .page-container) ===== */
+/* If footer is inside .page-container: make it full-width row and push it below content */
+body.standard-page .page-container > footer {
+  flex: 0 0 100%;
+  order: 9999;             /* push to the end of the container */
+  width: 100%;
+  margin-top: 28px;
 }
 
-/* Small responsiveness tweak */
-@media (max-width: 900px) {
-  body.index-page .index-body {
-    width: 92%;
-    padding: 36px;
-  }
+/* General footer styling (applies when footer is outside too) */
+footer {
+  width: 100%;
+  background-color: rgba(0,33,36,0.45);  /* translucent so it blends with background */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #9fbfb0;
+  text-align: center;
+  padding: 18px 12px;
+  margin-top: 40px;
+  border-radius: 0;
+  box-shadow: 0 -8px 20px rgba(0,0,0,0.35);
+}
+
+/* ===== Small screens: stack sidebar above content ===== */
+@media (max-width: 920px) {
+  body.index-page .index-body { width: 92%; padding: 36px; }
+  body.standard-page .page-container { padding: 12px; }
+  body.standard-page .page-container .main-area,
   body.standard-page .page-container {
     flex-direction: column;
-    padding: 16px;
   }
-  .sidebar {
-    width: 100%;
-    border-radius: 10px;
-  }
-  .content {
-    min-height: auto;
-    margin-top: 14px;
-  }
+  .sidebar { width: 100%; flex: 0 0 auto; }
+  .content { width: 100%; min-height: auto; margin-top: 14px; }
+  /* footer remains full width */
 }
