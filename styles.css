@@ -257,51 +257,101 @@ footer {
   width: 100%
 }
 
-body.city-info-page .sidebar { background-color: #398aa2; /* new sidebar color */}
-body.city-info-page .content { background-color: rgba(78, 107, 166, 0.8); /* new content box color */}
-body.city-info-page footer { background-color: #4e6ba6; /* new footer color */}
+/* === City Info Page === */
+body.city-info-page .sidebar { background-color: #398aa2; }
+body.city-info-page .content { background-color: rgba(57, 138, 162, 0.8); }
+body.city-info-page footer { background-color: #4e6ba6; }
 body.city-info-page {
-  background-color: #4e6ba6; /* behind sidebar and content */
+  background-color: #4e6ba6;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  color: #000000;
 }
 
+/* Font color for all text in this page */
+body.city-info-page,
+body.city-info-page .sidebar,
+body.city-info-page .sidebar a,
+body.city-info-page .subcategory li a,
+body.city-info-page .content,
+body.city-info-page footer {
+  color: #000000 !important;
+}
+
+/* === City Map Page === */
 body.city-map-page .sidebar { background-color: #398aa2; }
-body.city-map-page .content { background-color: rgba(78, 107, 166, 0.8); }
+body.city-map-page .content { background-color: rgba(57, 138, 162, 0.8); }
 body.city-map-page footer { background-color: #4e6ba6; }
 body.city-map-page {
   background-color: #4e6ba6;
   background-image: url('images/city-map-bg.png');
-  color: #000000;
 }
 
+/* Font color for all text in this page */
+body.city-map-page,
+body.city-map-page .sidebar,
+body.city-map-page .sidebar a,
+body.city-map-page .subcategory li a,
+body.city-map-page .content,
+body.city-map-page footer {
+  color: #000000 !important;
+}
+
+/* === Demographics Page === */
 body.demographics-page .sidebar { background-color: #398aa2; }
-body.demographics-page .content { background-color: rgba(78, 107, 166, 0.8); }
+body.demographics-page .content { background-color: rgba(57, 138, 162, 0.8); }
 body.demographics-page footer { background-color: #4e6ba6; }
 body.demographics-page {
   background-color: #4e6ba6;
   background-image: url('images/demographics-bg.png');
-  color: #000000;
 }
 
+/* Font color for all text in this page */
+body.demographics-page,
+body.demographics-page .sidebar,
+body.demographics-page .sidebar a,
+body.demographics-page .subcategory li a,
+body.demographics-page .content,
+body.demographics-page footer {
+  color: #000000 !important;
+}
+
+/* === Points of Interest Page === */
 body.points-of-interest-page .sidebar { background-color: #398aa2; }
-body.points-of-interest-page .content { background-color: rgba(78, 107, 166, 0.8); }
+body.points-of-interest-page .content { background-color: rgba(57, 138, 162, 0.8); }
 body.points-of-interest-page footer { background-color: #4e6ba6; }
 body.points-of-interest-page {
   background-color: #4e6ba6;
   background-image: url('images/poi-bg.png');
-  color: #000000;
 }
 
+/* Font color for all text in this page */
+body.points-of-interest-page,
+body.points-of-interest-page .sidebar,
+body.points-of-interest-page .sidebar a,
+body.points-of-interest-page .subcategory li a,
+body.points-of-interest-page .content,
+body.points-of-interest-page footer {
+  color: #000000 !important;
+}
+
+/* === Climate & Location Page === */
 body.climate-location-page .sidebar { background-color: #398aa2; }
-body.climate-location-page .content { background-color: rgba(78, 107, 166, 0.8); }
+body.climate-location-page .content { background-color: rgba(57, 138, 162, 0.8); }
 body.climate-location-page footer { background-color: #4e6ba6; }
 body.climate-location-page {
   background-color: #4e6ba6;
   background-image: url('images/climate-bg.png');
-  color: #000000;
+}
+
+/* Font color for all text in this page */
+body.climate-location-page,
+body.climate-location-page .sidebar,
+body.climate-location-page .sidebar a,
+body.climate-location-page .subcategory li a,
+body.climate-location-page .content,
+body.climate-location-page footer {
+  color: #000000 !important;
 }
 
