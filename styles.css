@@ -1,4 +1,16 @@
+/* === styles.css — fixed version === */
+
 /* === GLOBAL === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,130 +24,206 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: #e6eef6;
-  box-sizing: border-box;
 }
 
-/* === ANIMATIONS === */
+/* Generic link baseline */
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Fade-in shared animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === INDEX PAGE === */
+/* ========== INDEX PAGE SPECIFIC ========== */
+/* layout container for index pages */
 body.index-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+}
+
+/* Full-width translucent header (main title + nav) */
+/* uses backdrop-filter so the background image and color blend better */
+body.index-page .top-header {
+  width: 100%;
+  padding: 20px 0;
   text-align: center;
+  background-color: rgba(0, 43, 49, 0.45); /* translucent — blends with background */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  /* keep subtle outer shadow for separation */
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
 }
 
-body.index-page header.top-header h1 {
-  margin: 40px 0 20px 0;
+/* main title — no glow */
+body.index-page .top-header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.4rem;
+  color: #e6eef6;
+  line-height: 1.05;
 }
 
-/* Navigation links on index page with hover line animation and soft glow */
+/* nav (page titles) row — inside the full-width header */
 body.index-page nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
 }
 
+body.index-page nav ul li {
+  position: relative;
+  display: inline-block;
+}
+
+/* Nav link style: soft glow (text-shadow) only on the links */
 body.index-page nav ul li a {
   color: #8be9c2;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  text-shadow: 
-    0 0 2px rgba(139, 233, 194, 0.3),
-    0 0 4px rgba(139, 233, 194, 0.2);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-shadow: 0 0 4px rgba(139,233,194,0.32); /* softer glow */
+  display: inline-block;
 }
 
+/* Underline animation (left -> right) for index nav */
 body.index-page nav ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
-  width: 0;
+  bottom: -6px;
   height: 2px;
-  background-color: #ffd369;
-  transition: width 0.3s ease;
+  width: 0;
+  background: #ffd369;
+  transition: width 0.28s ease;
 }
 
-body.index-page nav ul li a:hover::after {
-  width: 100%;
-}
-
+body.index-page nav ul li a:hover::after,
 body.index-page nav ul li a.active::after {
   width: 100%;
 }
 
-/* Main content box on index page */
+body.index-page nav ul li a:hover {
+  color: #ffd369;
+  transform: scale(1.03);
+  text-shadow: 0 0 8px rgba(255,211,105,0.45);
+}
+
+/* Main centered content box for index page */
 body.index-page .index-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* left-align text inside */
   background-color: rgba(27, 55, 58, 0.75);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   color: #e6eef6;
-  padding: 60px;
-  margin: 40px auto;
-  border-radius: 16px;
-  max-width: 850px;
-  width: 75%;
+  padding: 56px;
+  margin: 60px auto;
+  border-radius: 14px;
+  max-width: 900px;
+  width: 85%;
   text-align: left;
-  backdrop-filter: blur(6px);
-  animation: fadeIn 1s ease;
+  animation: fadeIn 0.9s ease;
+  /* neutral shadow for depth, not colored glow */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* === STANDARD PAGES === */
+/* Make sure headings inside index-body don't receive the global link glow */
+body.index-page .index-body h1,
+body.index-page .index-body h2,
+body.index-page .index-body p {
+  text-shadow: none;
+}
+
+/* Full-width translucent footer for index and other pages (keeps consistent) */
+/* Place this rule later so footer everywhere matches */
+footer {
+  width: 100%;
+  background-color: rgba(0, 43, 49, 0.45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #9fbfb0;
+  text-align: center;
+  padding: 18px 12px;
+  margin-top: 40px;
+  border-radius: 0;
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.35);
+}
+
+/* ========== STANDARD PAGES (sidebar layout) ========== */
+/* Ensure all standard pages use a row layout for sidebar+content.
+   This prevents "jumbled" stacking even if HTML uses .main-area or not. */
 body.standard-page {
   display: flex;
-  flex-direction: column; /* stack page-container and footer */
-  min-height: 100vh;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-/* Container holding sidebar and main content */
-.page-container {
+/* page-container as outer wrapper — set to a row layout so sidebar sits left */
+body.standard-page .page-container {
   display: flex;
-  flex: 1;
-  flex-direction: row; /* sidebar left, content right */
+  flex-direction: row;   /* put sidebar and content side-by-side */
+  gap: 20px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 20px;
-  padding: 20px;
+  align-items: flex-start;
   box-sizing: border-box;
 }
 
-/* Sidebar styling */
+/* Support older templates that use .main-area wrapper:
+   if a .main-area exists inside .page-container, it should be flex row */
+body.standard-page .page-container .main-area {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Sidebar styles (left column) */
 .sidebar {
   width: 240px;
+  min-width: 180px;
   display: flex;
   flex-direction: column;
   background-color: rgba(27, 55, 58, 0.9);
-  padding: 20px;
+  padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  flex-shrink: 0;
-  animation: fadeIn 1s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  align-self: flex-start;
 }
 
+/* Sidebar main title: ONLY this gets a translucent rectangle with blur */
 .sidebar header {
-  font-size: 1.4em;
-  font-weight: bold;
+  font-size: 1.15rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 18px;
+  color: #e6eef6;
+  margin-bottom: 16px;
+  background-color: rgba(0, 43, 49, 0.5); /* translucent rectangle */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  padding: 10px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
 }
 
-/* Sidebar links (page titles) with soft static glow */
+/* The list of page links (no background rectangle behind each link) */
+.page-titles {
+  margin-top: 6px;
+}
+
 .page-titles ul {
   list-style: none;
   padding: 0;
@@ -143,74 +231,48 @@ body.standard-page {
 }
 
 .page-titles ul li {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   position: relative;
 }
 
+/* Soft glow only on the link text (NOT on content areas) */
 .page-titles ul li a {
   color: #8be9c2;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
+  font-weight: 700;
+  padding: 6px 10px;
   border-radius: 6px;
   display: inline-block;
-  position: relative;
-  transition: all 0.3s ease;
-  text-shadow: 
-    0 0 2px rgba(139, 233, 194, 0.25),
-    0 0 4px rgba(139, 233, 194, 0.15);
+  text-shadow: 0 0 4px rgba(139,233,194,0.32);
 }
 
+/* underline hover / left->right animation for sidebar links */
 .page-titles ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
-  width: 0;
+  bottom: -6px;
   height: 2px;
-  background-color: #ffd369;
-  transition: width 0.3s ease;
+  width: 0;
+  background: #ffd369;
+  transition: width 0.28s ease;
 }
 
-.page-titles ul li a:hover::after {
+.page-titles ul li a:hover::after,
+.page-titles ul li a.active::after {
   width: 100%;
 }
 
-.page-titles ul li a.active {
-  color: #ffffff;
-  background-color: rgba(255,255,255,0.1);
+.page-titles ul li a:hover {
+  color: #ffd369;
+  transform: translateY(-1px);
+  text-shadow: 0 0 8px rgba(255,211,105,0.36);
 }
 
-/* Main content box */
-.content {
-  flex: 1;
-  background-color: rgba(27, 55, 58, 0.8);
-  color: #b69803;
-  padding: 35px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 1s ease;
-  min-height: 80vh;
-  overflow: visible;
-  box-sizing: border-box;
-}
-
-/* Footer */
-footer {
-  background-color: #022125;
-  color: #9fbfb0;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  border-radius: 0 0 12px 12px;
-}
-
-/* === SUBCATEGORY LIST === */
+/* Subcategory items (kept visually simple) */
 .subcategory {
   display: none;
-  list-style: none;
-  padding-left: 25px;
-  margin: 8px 0 10px 0;
+  padding-left: 18px;
+  margin-top: 6px;
 }
 
 .has-sub.active .subcategory {
@@ -218,23 +280,45 @@ footer {
 }
 
 .subcategory li {
-  margin-bottom: 10px;
-  padding-left: 10px;
-  font-size: 0.95em;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
   color: #8be9c2;
-  transition: all 0.3s ease;
 }
 
-.subcategory li::before {
-  content: "→ ";
-  color: #ffd369;
+/* Main content area (right column) */
+.content {
+  flex: 1 1 auto;
+  background-color: rgba(27, 55, 58, 0.82);
+  color: #b69803;
+  padding: 28px;
+  border-radius: 12px;
+  /* neutral shadow — prevents colored "glow" on content */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  min-height: 70vh;
+  animation: fadeIn 0.9s ease;
 }
 
-.subcategory li a {
-  color: #8be9c2;
-  text-decoration: none;
+/* ensure headings and paragraphs inside content do not catch link glow */
+.content h1, .content h2, .content p, .content li {
+  text-shadow: none;
 }
 
-.subcategory li a:hover {
-  color: #ffd369;
+/* Small responsiveness tweak */
+@media (max-width: 900px) {
+  body.index-page .index-body {
+    width: 92%;
+    padding: 36px;
+  }
+  body.standard-page .page-container {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .sidebar {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .content {
+    min-height: auto;
+    margin-top: 14px;
+  }
 }
