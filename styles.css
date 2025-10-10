@@ -262,10 +262,6 @@ body.city-info-page .content { background-color: rgba(147, 143, 184, 0.8); /* ne
 body.city-info-page footer { background-color: #4e6ba6; /* new footer color */}
 body.city-info-page {
   background-color: #4e6ba6; /* behind sidebar and content */
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 body.city-map-page .sidebar { background-color: #938fb8; }
