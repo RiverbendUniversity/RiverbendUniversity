@@ -335,8 +335,7 @@ body.climate-location-page footer {
   color: #ebbe83 !important;
 }
 
-/* === Card-Based Navigation for Index Page === */
-body.index-page .card-nav {
+body.city-info-page .card-nav {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -344,9 +343,9 @@ body.index-page .card-nav {
   margin: 20px auto;
 }
 
-body.index-page .card-nav a {
-  background-color: #022125;
-  color: #8be9c2;
+body.city-info-page .card-nav a {
+  background-color: #6d1703; /* matches sidebar rectangle */
+  color: #ebbe83;
   text-decoration: none;
   font-weight: bold;
   padding: 12px 20px;
@@ -357,10 +356,17 @@ body.index-page .card-nav a {
   min-width: 120px;
 }
 
-body.index-page .card-nav a:hover {
-  background-color: #04404f;
+body.city-info-page .card-nav a:hover {
+  background-color: #ebbe83; /* hover color */
+  color: #6d1703;
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+body.city-info-page .card-nav a.active {
+  background-color: #ebbe83; /* active page */
+  color: #6d1703;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
 body.index-page .card-nav a.active {
