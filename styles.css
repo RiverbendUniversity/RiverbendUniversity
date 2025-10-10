@@ -268,7 +268,7 @@ body.city-map-page .sidebar { background-color: #938fb8; }
 body.city-map-page .content { background-color: rgba(147, 143, 184, 0.8); }
 body.city-map-page footer { background-color: #4e6ba6; }
 body.city-map-page {
-  background-color: #002633;
+  background-color: #4e6ba6;
   background-image: url('images/city-map-bg.png');
 }
 
@@ -276,7 +276,7 @@ body.demographics-page .sidebar { background-color: #938fb8; }
 body.demographics-page .content { background-color: rgba(147, 143, 184, 0.8); }
 body.demographics-page footer { background-color: #4e6ba6; }
 body.demographics-page {
-  background-color: #002e3d;
+  background-color: #4e6ba6;
   background-image: url('images/demographics-bg.png');
 }
 
@@ -284,7 +284,7 @@ body.points-of-interest-page .sidebar { background-color: #938fb8; }
 body.points-of-interest-page .content { background-color: rgba(147, 143, 184, 0.8); }
 body.points-of-interest-page footer { background-color: #4e6ba6; }
 body.points-of-interest-page {
-  background-color: #00374a;
+  background-color: #4e6ba6;
   background-image: url('images/poi-bg.png');
 }
 
@@ -292,7 +292,7 @@ body.climate-location-page .sidebar { background-color: #938fb8; }
 body.climate-location-page .content { background-color: rgba(147, 143, 184, 0.8); }
 body.climate-location-page footer { background-color: #4e6ba6; }
 body.climate-location-page {
-  background-color: #004055;
+  background-color: #4e6ba6;
   background-image: url('images/climate-bg.png');
 }
 
