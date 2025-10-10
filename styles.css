@@ -258,11 +258,12 @@ footer {
 }
 
 /* === City Info Page === */
-body.city-info-page .sidebar { background-color: #c65a11; }
+body.city-info-page .sidebar { background-color: #6d1703; }
 body.city-info-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.city-info-page footer { background-color: #63405c; }
 body.city-info-page {
   background-color: #63405c;
+  background-image: none;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
