@@ -32,7 +32,7 @@ body.index-page {
 
 /* Top header background behind main title */
 body.index-page header.top-header {
-  background-color: #022125; /* updated background color */
+  background-color: #022125;
   padding: 5px 0;
   width: 100%;
   border-radius: 0 0 12px 12px;
@@ -41,52 +41,6 @@ body.index-page header.top-header {
 /* Main title margin */
 body.index-page header.top-header h1 {
   margin: 40px 0 20px 0;
-}
-
-/* Navigation links on index page with hover line animation and soft glow */
-body.index-page nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  background-color: #022125; /* updated background color */
-  border-radius: 8px;
-  padding: 10px 0;
-}
-
-body.index-page nav ul li a {
-  color: #8be9c2;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  text-shadow: 
-    0 0 2px rgba(139, 233, 194, 0.3),
-    0 0 4px rgba(139, 233, 194, 0.2);
-}
-
-body.index-page nav ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #ffd369;
-  transition: width 0.3s ease;
-}
-
-body.index-page nav ul li a:hover::after {
-  width: 100%;
-}
-
-body.index-page nav ul li a.active::after {
-  width: 100%;
 }
 
 /* Main content box on index page */
@@ -110,7 +64,7 @@ body.index-page .index-body {
 /* === STANDARD PAGES === */
 body.standard-page {
   display: flex;
-  flex-direction: column; /* stack page-container and footer */
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -118,7 +72,7 @@ body.standard-page {
 .page-container {
   display: flex;
   flex: 1;
-  flex-direction: row; /* sidebar left, content right */
+  flex-direction: row;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -146,7 +100,7 @@ body.standard-page {
   font-weight: bold;
   text-align: center;
   margin-bottom: 18px;
-  background-color: #022125; /* updated background color */
+  background-color: #022125;
   padding: 10px;
   border-radius: 6px;
   color: #e6eef6;
@@ -259,8 +213,8 @@ footer {
 
 /* === City Info Page === */
 body.city-info-page .sidebar { background-color: #6d1703; }
-body.city-info-page .sidebar header { /* rectangle behind main title */
-  background-color: #ebbe83; /* darker shade of sidebar */
+body.city-info-page .sidebar header {
+  background-color: #ebbe83;
   color: #6d1703; 
   padding: 10px;
   border-radius: 6px;
@@ -276,8 +230,6 @@ body.city-info-page {
   background-size: cover;
   background-attachment: fixed;
 }
-
-/* Font color for all text in this page */
 body.city-info-page,
 body.city-info-page .sidebar,
 body.city-info-page .sidebar a,
@@ -302,8 +254,6 @@ body.city-map-page {
   background-color: #ebbe83;
   background-image: url('images/city-map-bg.png');
 }
-
-/* Font color for all text in this page */
 body.city-map-page,
 body.city-map-page .sidebar,
 body.city-map-page .sidebar a,
@@ -328,8 +278,6 @@ body.demographics-page {
   background-color: #ebbe83;
   background-image: url('images/demographics-bg.png');
 }
-
-/* Font color for all text in this page */
 body.demographics-page,
 body.demographics-page .sidebar,
 body.demographics-page .sidebar a,
@@ -354,8 +302,6 @@ body.points-of-interest-page {
   background-color: #ebbe83;
   background-image: url('images/poi-bg.png');
 }
-
-/* Font color for all text in this page */
 body.points-of-interest-page,
 body.points-of-interest-page .sidebar,
 body.points-of-interest-page .sidebar a,
@@ -376,17 +322,4 @@ body.climate-location-page .sidebar header {
 }
 body.climate-location-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.climate-location-page footer { background-color: #6d1703; }
-body.climate-location-page {
-  background-color: #ebbe83;
-  background-image: url('images/climate-bg.png');
-}
-
-/* Font color for all text in this page */
-body.climate-location-page,
-body.climate-location-page .sidebar,
-body.climate-location-page .sidebar a,
-body.climate-location-page .subcategory li a,
-body.climate-location-page .content,
-body.climate-location-page footer {
-  color: #ebbe83 !important;
-}
+body.climate-location-page
