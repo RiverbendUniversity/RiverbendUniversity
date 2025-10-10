@@ -12,13 +12,11 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: #e6eef6;
-  box-sizing: border-box;
 }
 
-/* === ANIMATIONS === */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 /* === INDEX PAGE === */
@@ -27,57 +25,52 @@ body.index-page {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+}
+
+/* === HEADER (Title + Navigation) === */
+body.index-page .top-header {
+  width: 100%;
   text-align: center;
+  padding: 20px 0;
+  background-color: rgba(0, 43, 49, 0.95); /* opaque background behind main title & nav */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-body.index-page header.top-header h1 {
-  margin: 40px 0 20px 0;
+body.index-page .top-header h1 {
+  margin: 0 0 15px 0;
+  font-size: 2.5em;
+  color: #e6eef6;
 }
 
-/* Navigation links on index page with hover line animation and soft glow */
+/* Navigation bar under the title */
 body.index-page nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
 }
 
+/* Navigation links with glow */
 body.index-page nav ul li a {
   color: #8be9c2;
-  text-decoration: none;
   font-weight: bold;
   font-size: 1.1em;
   padding: 8px 12px;
   border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  text-shadow: 
-    0 0 2px rgba(139, 233, 194, 0.3),
-    0 0 4px rgba(139, 233, 194, 0.2);
+  text-shadow: 0 0 6px rgba(139, 233, 194, 0.4);
+  background-color: rgba(27, 55, 58, 0.9); /* opaque background behind links */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-body.index-page nav ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #ffd369;
-  transition: width 0.3s ease;
+body.index-page nav ul li a:hover {
+  color: #ffd369;
+  text-shadow: 0 0 12px #ffd369;
+  transform: scale(1.05);
 }
 
-body.index-page nav ul li a:hover::after {
-  width: 100%;
-}
-
-body.index-page nav ul li a.active::after {
-  width: 100%;
-}
-
-/* Main content box on index page */
+/* === MAIN INDEX CONTENT BOX === */
 body.index-page .index-body {
   display: flex;
   flex-direction: column;
@@ -86,8 +79,9 @@ body.index-page .index-body {
   background-color: rgba(27, 55, 58, 0.75);
   color: #e6eef6;
   padding: 60px;
-  margin: 40px auto;
+  margin: 60px auto;
   border-radius: 16px;
+  box-shadow: 0 0 25px rgba(139, 233, 194, 0.4);
   max-width: 850px;
   width: 75%;
   text-align: left;
@@ -95,27 +89,29 @@ body.index-page .index-body {
   animation: fadeIn 1s ease;
 }
 
-/* === STANDARD PAGES === */
+/* === STANDARD PAGES (About, Degrees, City Info, etc.) === */
 body.standard-page {
   display: flex;
-  flex-direction: column; /* stack page-container and footer */
-  min-height: 100vh;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-/* Container holding sidebar and main content */
 .page-container {
   display: flex;
-  flex: 1;
-  flex-direction: row; /* sidebar left, content right */
+  flex-direction: column;
+  min-height: 100vh;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  gap: 20px;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
-/* Sidebar styling */
+.main-area {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex: 1;
+}
+
+/* === SIDEBAR === */
 .sidebar {
   width: 240px;
   display: flex;
@@ -123,19 +119,19 @@ body.standard-page {
   background-color: rgba(27, 55, 58, 0.9);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  flex-shrink: 0;
-  animation: fadeIn 1s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Sidebar header */
 .sidebar header {
   font-size: 1.4em;
   font-weight: bold;
   text-align: center;
   margin-bottom: 18px;
+  color: #e6eef6;
 }
 
-/* Sidebar links (page titles) with soft static glow */
+/* Sidebar link list */
 .page-titles ul {
   list-style: none;
   padding: 0;
@@ -144,68 +140,32 @@ body.standard-page {
 
 .page-titles ul li {
   margin-bottom: 14px;
-  position: relative;
 }
 
+/* Page title links with opaque background and glow */
 .page-titles ul li a {
   color: #8be9c2;
-  text-decoration: none;
   font-weight: bold;
   padding: 8px 12px;
   border-radius: 6px;
   display: inline-block;
-  position: relative;
-  transition: all 0.3s ease;
-  text-shadow: 
-    0 0 2px rgba(139, 233, 194, 0.25),
-    0 0 4px rgba(139, 233, 194, 0.15);
+  background-color: rgba(27, 55, 58, 0.95); /* opaque background for page titles */
+  text-shadow: 0 0 6px rgba(139, 233, 194, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-.page-titles ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #ffd369;
-  transition: width 0.3s ease;
-}
-
-.page-titles ul li a:hover::after {
-  width: 100%;
+.page-titles ul li a:hover {
+  color: #ffd369;
+  text-shadow: 0 0 12px #ffd369;
+  transform: scale(1.05);
 }
 
 .page-titles ul li a.active {
   color: #ffffff;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Main content box */
-.content {
-  flex: 1;
-  background-color: rgba(27, 55, 58, 0.8);
-  color: #b69803;
-  padding: 35px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 1s ease;
-  min-height: 80vh;
-  overflow: visible;
-  box-sizing: border-box;
-}
-
-/* Footer */
-footer {
-  background-color: #022125;
-  color: #9fbfb0;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  border-radius: 0 0 12px 12px;
-}
-
-/* === SUBCATEGORY LIST === */
+/* Subcategory */
 .subcategory {
   display: none;
   list-style: none;
@@ -222,7 +182,6 @@ footer {
   padding-left: 10px;
   font-size: 0.95em;
   color: #8be9c2;
-  transition: all 0.3s ease;
 }
 
 .subcategory li::before {
@@ -232,9 +191,39 @@ footer {
 
 .subcategory li a {
   color: #8be9c2;
-  text-decoration: none;
 }
 
 .subcategory li a:hover {
   color: #ffd369;
+}
+
+/* === MAIN CONTENT BOX (Right side) === */
+.content {
+  flex: 1;
+  background-color: rgba(27, 55, 58, 0.8);
+  color: #b69803;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(139, 233, 194, 0.4);
+  overflow: visible;
+  min-height: 80vh;
+  animation: fadeIn 1s ease;
+}
+
+/* === FADE-IN ANIMATION === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === FOOTER === */
+footer {
+  width: 100%;
+  background-color: rgba(0, 43, 49, 0.95); /* full-width opaque footer background */
+  color: #9fbfb0;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 0;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
 }
