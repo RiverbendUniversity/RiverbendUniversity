@@ -33,7 +33,7 @@ body.index-page {
 /* Top header background behind main title */
 body.index-page header.top-header {
   background-color: #022125; /* updated background color */
-  padding: 10px 0;
+  padding: 5px 0;
   width: 100%;
   border-radius: 0 0 12px 12px;
 }
