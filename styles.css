@@ -30,6 +30,15 @@ body.index-page {
   text-align: center;
 }
 
+/* Top header background behind main title */
+body.index-page header.top-header {
+  background-color: #002b31; /* same as background image */
+  padding: 20px 0;
+  width: 100%;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Main title margin */
 body.index-page header.top-header h1 {
   margin: 40px 0 20px 0;
 }
@@ -42,6 +51,9 @@ body.index-page nav ul {
   display: flex;
   justify-content: center;
   gap: 20px;
+  background-color: #002b31; /* opaque background behind nav */
+  border-radius: 8px;
+  padding: 10px 0;
 }
 
 body.index-page nav ul li a {
@@ -128,11 +140,16 @@ body.standard-page {
   animation: fadeIn 1s ease;
 }
 
+/* Sidebar header background behind page titles */
 .sidebar header {
   font-size: 1.4em;
   font-weight: bold;
   text-align: center;
   margin-bottom: 18px;
+  background-color: #002b31; /* opaque background same as image */
+  padding: 10px;
+  border-radius: 6px;
+  color: #e6eef6;
 }
 
 /* Sidebar links (page titles) with soft static glow */
@@ -181,31 +198,7 @@ body.standard-page {
   background-color: rgba(255,255,255,0.1);
 }
 
-/* Main content box */
-.content {
-  flex: 1;
-  background-color: rgba(27, 55, 58, 0.8);
-  color: #b69803;
-  padding: 35px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 1s ease;
-  min-height: 80vh;
-  overflow: visible;
-  box-sizing: border-box;
-}
-
-/* Footer */
-footer {
-  background-color: #022125;
-  color: #9fbfb0;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  border-radius: 0 0 12px 12px;
-}
-
-/* === SUBCATEGORY LIST === */
+/* Subcategory list */
 .subcategory {
   display: none;
   list-style: none;
@@ -237,4 +230,28 @@ footer {
 
 .subcategory li a:hover {
   color: #ffd369;
+}
+
+/* Main content box */
+.content {
+  flex: 1;
+  background-color: rgba(27, 55, 58, 0.8);
+  color: #b69803;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease;
+  min-height: 80vh;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Footer */
+footer {
+  background-color: #022125;
+  color: #9fbfb0;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  border-radius: 0 0 12px 12px;
 }
