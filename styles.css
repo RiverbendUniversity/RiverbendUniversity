@@ -27,13 +27,13 @@ body.index-page {
   min-height: 100vh;
 }
 
-/* === HEADER (Title + Navigation) === */
+/* Top header (main title + navigation) */
 body.index-page .top-header {
   width: 100%;
   text-align: center;
   padding: 20px 0;
-  background-color: rgba(0, 43, 49, 0.95); /* opaque background behind main title & nav */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 43, 49, 0.9); /* opaque background */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
 body.index-page .top-header h1 {
@@ -52,16 +52,14 @@ body.index-page nav ul {
   margin: 0;
 }
 
-/* Navigation links with glow */
+/* Navigation link styles */
 body.index-page nav ul li a {
   color: #8be9c2;
   font-weight: bold;
   font-size: 1.1em;
   padding: 8px 12px;
   border-radius: 8px;
-  text-shadow: 0 0 6px rgba(139, 233, 194, 0.4);
-  background-color: rgba(27, 55, 58, 0.9); /* opaque background behind links */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 6px rgba(139, 233, 194, 0.4); /* soft static glow */
 }
 
 body.index-page nav ul li a:hover {
@@ -70,7 +68,7 @@ body.index-page nav ul li a:hover {
   transform: scale(1.05);
 }
 
-/* === MAIN INDEX CONTENT BOX === */
+/* Main box in the center */
 body.index-page .index-body {
   display: flex;
   flex-direction: column;
@@ -89,7 +87,7 @@ body.index-page .index-body {
   animation: fadeIn 1s ease;
 }
 
-/* === STANDARD PAGES (About, Degrees, City Info, etc.) === */
+/* === STANDARD PAGES (About, Degrees, etc.) === */
 body.standard-page {
   display: flex;
   justify-content: center;
@@ -111,18 +109,18 @@ body.standard-page {
   flex: 1;
 }
 
-/* === SIDEBAR === */
+/* Sidebar layout */
 .sidebar {
   width: 240px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(27, 55, 58, 0.9);
+  background-color: rgba(27, 55, 58, 0.95); /* opaque background */
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* Sidebar header */
+/* Sidebar title */
 .sidebar header {
   font-size: 1.4em;
   font-weight: bold;
@@ -131,7 +129,7 @@ body.standard-page {
   color: #e6eef6;
 }
 
-/* Sidebar link list */
+/* Sidebar navigation */
 .page-titles ul {
   list-style: none;
   padding: 0;
@@ -142,16 +140,14 @@ body.standard-page {
   margin-bottom: 14px;
 }
 
-/* Page title links with opaque background and glow */
+/* Links with soft static glow */
 .page-titles ul li a {
   color: #8be9c2;
   font-weight: bold;
   padding: 8px 12px;
   border-radius: 6px;
   display: inline-block;
-  background-color: rgba(27, 55, 58, 0.95); /* opaque background for page titles */
   text-shadow: 0 0 6px rgba(139, 233, 194, 0.4);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .page-titles ul li a:hover {
@@ -162,10 +158,10 @@ body.standard-page {
 
 .page-titles ul li a.active {
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255,255,255,0.1);
 }
 
-/* Subcategory */
+/* Subcategory menu */
 .subcategory {
   display: none;
   list-style: none;
@@ -197,7 +193,7 @@ body.standard-page {
   color: #ffd369;
 }
 
-/* === MAIN CONTENT BOX (Right side) === */
+/* Main text box */
 .content {
   flex: 1;
   background-color: rgba(27, 55, 58, 0.8);
@@ -210,7 +206,7 @@ body.standard-page {
   animation: fadeIn 1s ease;
 }
 
-/* === FADE-IN ANIMATION === */
+/* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -219,7 +215,7 @@ body.standard-page {
 /* === FOOTER === */
 footer {
   width: 100%;
-  background-color: rgba(0, 43, 49, 0.95); /* full-width opaque footer background */
+  background-color: rgba(2, 33, 37, 1); /* fully opaque */
   color: #9fbfb0;
   text-align: center;
   padding: 20px;
