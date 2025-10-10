@@ -260,7 +260,7 @@ footer {
 /* === City Info Page === */
 body.city-info-page .sidebar { background-color: #6d1703; }
 body.city-info-page .sidebar header { /* rectangle behind main title */
-  background-color: #eb9b6a; /* darker shade of sidebar */
+  background-color: #e7ad99; /* darker shade of sidebar */
   color: #6d1703; 
   padding: 10px;
   border-radius: 6px;
@@ -269,7 +269,7 @@ body.city-info-page .sidebar header { /* rectangle behind main title */
 body.city-info-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.city-info-page footer { background-color: #6d1703; }
 body.city-info-page {
-  background-color: #eb9b6a;
+  background-color: #e7ad99;
   background-image: none;
   background-repeat: no-repeat;
   background-position: center center;
