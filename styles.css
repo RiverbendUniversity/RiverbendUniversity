@@ -259,6 +259,13 @@ footer {
 
 /* === City Info Page === */
 body.city-info-page .sidebar { background-color: #6d1703; }
+body.city-info-page .sidebar header { /* rectangle behind main title */
+  background-color: #eb9b6a; /* darker shade of sidebar */
+  color: #6d1703; 
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
 body.city-info-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.city-info-page footer { background-color: #e7ad99; }
 body.city-info-page {
@@ -282,6 +289,13 @@ body.city-info-page footer {
 
 /* === City Map Page === */
 body.city-map-page .sidebar { background-color: #398aa2; }
+body.city-map-page .sidebar header {
+  background-color: #2f718b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
 body.city-map-page .content { background-color: rgba(57, 138, 162, 0.8); }
 body.city-map-page footer { background-color: #4e6ba6; }
 body.city-map-page {
@@ -301,6 +315,13 @@ body.city-map-page footer {
 
 /* === Demographics Page === */
 body.demographics-page .sidebar { background-color: #398aa2; }
+body.demographics-page .sidebar header {
+  background-color: #2f718b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
 body.demographics-page .content { background-color: rgba(57, 138, 162, 0.8); }
 body.demographics-page footer { background-color: #4e6ba6; }
 body.demographics-page {
@@ -320,6 +341,13 @@ body.demographics-page footer {
 
 /* === Points of Interest Page === */
 body.points-of-interest-page .sidebar { background-color: #398aa2; }
+body.points-of-interest-page .sidebar header {
+  background-color: #2f718b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
 body.points-of-interest-page .content { background-color: rgba(57, 138, 162, 0.8); }
 body.points-of-interest-page footer { background-color: #4e6ba6; }
 body.points-of-interest-page {
@@ -339,6 +367,13 @@ body.points-of-interest-page footer {
 
 /* === Climate & Location Page === */
 body.climate-location-page .sidebar { background-color: #398aa2; }
+body.climate-location-page .sidebar header {
+  background-color: #2f718b;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
 body.climate-location-page .content { background-color: rgba(57, 138, 162, 0.8); }
 body.climate-location-page footer { background-color: #4e6ba6; }
 body.climate-location-page {
