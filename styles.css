@@ -322,4 +322,49 @@ body.climate-location-page .sidebar header {
 }
 body.climate-location-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.climate-location-page footer { background-color: #6d1703; }
-body.climate-location-page
+body.climate-location-page {
+  background-color: #ebbe83;
+  background-image: url('images/climate-bg.png');
+}
+body.climate-location-page,
+body.climate-location-page .sidebar,
+body.climate-location-page .sidebar a,
+body.climate-location-page .subcategory li a,
+body.climate-location-page .content,
+body.climate-location-page footer {
+  color: #ebbe83 !important;
+}
+
+/* === Card-Based Navigation for Index Page === */
+body.index-page .card-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+body.index-page .card-nav a {
+  background-color: #022125;
+  color: #8be9c2;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 120px;
+}
+
+body.index-page .card-nav a:hover {
+  background-color: #04404f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+body.index-page .card-nav a.active {
+  background-color: #8be9c2;
+  color: #022125;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
