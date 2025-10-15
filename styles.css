@@ -21,6 +21,88 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* === INDEX PAGE === */
+body.index-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+body.index-page header.top-header {
+  background-color: #022125;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 0 0 12px 12px;
+}
+
+body.index-page header.top-header h1 {
+  margin: 40px 0 20px 0;
+}
+
+body.index-page nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #022125;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+body.index-page nav ul li a {
+  color: #8be9c2;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-shadow: 
+    0 0 2px rgba(139, 233, 194, 0.3),
+    0 0 4px rgba(139, 233, 194, 0.2);
+}
+
+body.index-page nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffd369;
+  transition: width 0.3s ease;
+}
+
+body.index-page nav ul li a:hover::after {
+  width: 100%;
+}
+
+body.index-page nav ul li a.active::after {
+  width: 100%;
+}
+
+body.index-page .index-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(27, 55, 58, 0.75);
+  color: #e6eef6;
+  padding: 60px;
+  margin: 40px auto;
+  border-radius: 16px;
+  max-width: 850px;
+  width: 75%;
+  text-align: left;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1s ease;
+}
+
 /* === STANDARD PAGES === */
 body.standard-page {
   display: flex;
@@ -65,6 +147,84 @@ body.standard-page {
   color: #e6eef6;
 }
 
+.page-titles ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-titles ul li {
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.page-titles ul li a {
+  color: #8be9c2;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+  text-shadow: 
+    0 0 2px rgba(139, 233, 194, 0.25),
+    0 0 4px rgba(139, 233, 194, 0.15);
+}
+
+.page-titles ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffd369;
+  transition: width 0.3s ease;
+}
+
+.page-titles ul li a:hover::after {
+  width: 100%;
+}
+
+.page-titles ul li a.active {
+  color: #ffffff;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.subcategory {
+  display: none;
+  list-style: none;
+  padding-left: 25px;
+  margin: 8px 0 10px 0;
+}
+
+.has-sub.active .subcategory {
+  display: block;
+}
+
+.subcategory li {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-size: 0.95em;
+  color: #8be9c2;
+  transition: all 0.3s ease;
+}
+
+.subcategory li::before {
+  content: "→ ";
+  color: #ffd369;
+}
+
+.subcategory li a {
+  color: #8be9c2;
+  text-decoration: none;
+}
+
+.subcategory li a:hover {
+  color: #ffd369;
+}
+
 /* Main content box */
 .content {
   flex: 1;
@@ -90,7 +250,7 @@ footer {
   width: 100%;
 }
 
-/* === CITY INFO PAGE === */
+/* === City Info Page === */
 body.city-info-page {
   background-color: #ebbe83;
   background-image: none;
@@ -98,82 +258,26 @@ body.city-info-page {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Hide sidebar */
 body.city-info-page .page-container {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 body.city-info-page .sidebar {
   display: none;
 }
 
-/* Wide header */
-body.city-info-page .page-header {
-  width: 100%;
-  max-width: 1200px;
-  background-color: #6d1703;
-  color: #ebbe83;
-  text-align: center;
-  padding: 40px 20px;
-  border-radius: 12px;
-  margin-top: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  font-size: 2em;
-  font-weight: bold;
-}
-
-/* Card-Based Navigation below header */
-body.city-info-page .card-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: 25px; /* space between cards */
-  margin: 20px 0 40px 0;
-  padding: 0 10px;
-  max-width: 1000px;
-  text-align: center;
-  animation: fadeIn 1s ease;
-}
-
-body.city-info-page .card-nav a {
-  background-color: #6d1703;
-  color: #ebbe83;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1em;
-  padding: 15px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  transition: all 0.3s ease;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 1 150px;
-  height: 60px;
-}
-
-body.city-info-page .card-nav a:hover {
-  background-color: #8b2405;
-  color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
-}
-
-/* Main content box wider and centered */
+/* Main content centered and wider */
 body.city-info-page .content.main-only {
-  max-width: 950px;
+  max-width: 950px; /* slightly wider */
   width: 80%;
   margin: 0 auto;
   text-align: left;
-  background-color: rgba(109,23,3,0.8);
+  background-color: rgba(109, 23, 3, 0.8);
   border-radius: 16px;
   padding: 60px;
   backdrop-filter: blur(6px);
@@ -189,31 +293,69 @@ body.city-info-page .card-nav a {
   color: #ebbe83 !important;
 }
 
-/* === OTHER PAGES: keep existing styles unchanged === */
+/* Card-Based Navigation (top, centered, single row, smaller links) */
+body.city-info-page .card-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* single row */
+  gap: 15px;
+  margin: 30px auto 40px auto;
+  padding: 10px;
+  max-width: 1000px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+body.city-info-page .card-nav a {
+  background-color: #6d1703;
+  color: #ebbe83;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em; /* slightly smaller */
+  padding: 15px 20px; /* smaller padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 150px; /* equal width for all cards */
+  height: 60px;
+}
+
+body.city-info-page .card-nav a:hover {
+  background-color: #8b2405;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* === Other Pages: Keep existing styles unchanged === */
 body.city-map-page .sidebar { background-color: #6d1703; }
 body.city-map-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
-body.city-map-page .content { background-color: rgba(109,23,3,0.8); }
+body.city-map-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.city-map-page footer { background-color: #6d1703; }
 body.city-map-page { background-color: #ebbe83; background-image: url('images/city-map-bg.png'); }
 body.city-map-page, body.city-map-page .sidebar, body.city-map-page .sidebar a, body.city-map-page .subcategory li a, body.city-map-page .content, body.city-map-page footer { color: #ebbe83 !important; }
 
 body.demographics-page .sidebar { background-color: #6d1703; }
 body.demographics-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
-body.demographics-page .content { background-color: rgba(109,23,3,0.8); }
+body.demographics-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.demographics-page footer { background-color: #6d1703; }
 body.demographics-page { background-color: #ebbe83; background-image: url('images/demographics-bg.png'); }
 body.demographics-page, body.demographics-page .sidebar, body.demographics-page .sidebar a, body.demographics-page .subcategory li a, body.demographics-page .content, body.demographics-page footer { color: #ebbe83 !important; }
 
 body.points-of-interest-page .sidebar { background-color: #6d1703; }
 body.points-of-interest-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
-body.points-of-interest-page .content { background-color: rgba(109,23,3,0.8); }
+body.points-of-interest-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.points-of-interest-page footer { background-color: #6d1703; }
 body.points-of-interest-page { background-color: #ebbe83; background-image: url('images/poi-bg.png'); }
 body.points-of-interest-page, body.points-of-interest-page .sidebar, body.points-of-interest-page .sidebar a, body.points-of-interest-page .subcategory li a, body.points-of-interest-page .content, body.points-of-interest-page footer { color: #ebbe83 !important; }
 
 body.climate-location-page .sidebar { background-color: #6d1703; }
 body.climate-location-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
-body.climate-location-page .content { background-color: rgba(109,23,3,0.8); }
+body.climate-location-page .content { background-color: rgba(109, 23, 3, 0.8); }
 body.climate-location-page footer { background-color: #6d1703; }
 body.climate-location-page { background-color: #ebbe83; background-image: url('images/climate-bg.png'); }
 body.climate-location-page, body.climate-location-page .sidebar, body.climate-location-page .sidebar a, body.climate-location-page .subcategory li a, body.climate-location-page .content, body.climate-location-page footer { color: #ebbe83 !important; }
