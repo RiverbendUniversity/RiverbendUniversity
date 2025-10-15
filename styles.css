@@ -30,7 +30,6 @@ body.index-page {
   text-align: center;
 }
 
-/* Top header background behind main title */
 body.index-page header.top-header {
   background-color: #022125;
   padding: 5px 0;
@@ -38,12 +37,10 @@ body.index-page header.top-header {
   border-radius: 0 0 12px 12px;
 }
 
-/* Main title margin */
 body.index-page header.top-header h1 {
   margin: 40px 0 20px 0;
 }
 
-/* Navigation links on index page with hover line animation and soft glow */
 body.index-page nav ul {
   list-style: none;
   padding: 0;
@@ -89,7 +86,6 @@ body.index-page nav ul li a.active::after {
   width: 100%;
 }
 
-/* Main content box on index page */
 body.index-page .index-body {
   display: flex;
   flex-direction: column;
@@ -110,7 +106,7 @@ body.index-page .index-body {
 /* === STANDARD PAGES === */
 body.standard-page {
   display: flex;
-  flex-direction: column; /* stack page-container and footer */
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -118,7 +114,7 @@ body.standard-page {
 .page-container {
   display: flex;
   flex: 1;
-  flex-direction: row; /* sidebar left, content right */
+  flex-direction: row;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -140,7 +136,6 @@ body.standard-page {
   animation: fadeIn 1s ease;
 }
 
-/* Sidebar header background behind page titles */
 .sidebar header {
   font-size: 1.4em;
   font-weight: bold;
@@ -152,7 +147,6 @@ body.standard-page {
   color: #e6eef6;
 }
 
-/* Sidebar links (page titles) with soft static glow */
 .page-titles ul {
   list-style: none;
   padding: 0;
@@ -198,7 +192,6 @@ body.standard-page {
   background-color: rgba(255,255,255,0.1);
 }
 
-/* Subcategory list */
 .subcategory {
   display: none;
   list-style: none;
@@ -278,10 +271,10 @@ body.city-info-page .sidebar {
   display: none;
 }
 
-/* Main content centered */
+/* Main content centered and wider */
 body.city-info-page .content.main-only {
-  max-width: 850px;
-  width: 75%;
+  max-width: 950px; /* slightly wider */
+  width: 80%;
   margin: 0 auto;
   text-align: left;
   background-color: rgba(109, 23, 3, 0.8);
@@ -300,15 +293,15 @@ body.city-info-page .card-nav a {
   color: #ebbe83 !important;
 }
 
-/* Card-Based Navigation (top and centered) */
+/* Card-Based Navigation (top, centered, single row, smaller links) */
 body.city-info-page .card-nav {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-wrap: nowrap; /* single row */
+  gap: 15px;
   margin: 30px auto 40px auto;
-  padding: 20px;
-  max-width: 900px;
+  padding: 10px;
+  max-width: 1000px;
   text-align: center;
   animation: fadeIn 1s ease;
 }
@@ -318,23 +311,23 @@ body.city-info-page .card-nav a {
   color: #ebbe83;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1em;
-  padding: 20px 30px;
+  font-size: 1em; /* slightly smaller */
+  padding: 15px 20px; /* smaller padding */
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
-  flex: 1 1 180px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  flex: 1 1 150px; /* equal width for all cards */
+  height: 60px;
 }
 
 body.city-info-page .card-nav a:hover {
   background-color: #8b2405;
   color: #ffffff;
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
 }
 
