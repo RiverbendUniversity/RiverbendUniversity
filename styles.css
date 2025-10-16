@@ -110,7 +110,6 @@ body.standard-page {
   min-height: 100vh;
 }
 
-/* Container holding sidebar and main content */
 .page-container {
   display: flex;
   flex: 1;
@@ -123,7 +122,6 @@ body.standard-page {
   box-sizing: border-box;
 }
 
-/* Sidebar styling */
 .sidebar {
   width: 240px;
   display: flex;
@@ -225,7 +223,6 @@ body.standard-page {
   color: #ffd369;
 }
 
-/* Main content box */
 .content {
   flex: 1;
   background-color: rgba(27, 55, 58, 0.8);
@@ -239,7 +236,6 @@ body.standard-page {
   box-sizing: border-box;
 }
 
-/* Footer */
 footer {
   background-color: #022125;
   color: #9fbfb0;
@@ -260,20 +256,34 @@ body.city-info-page {
   background-attachment: fixed;
 }
 
-/* Hide sidebar */
+/* Page-specific header */
+body.city-info-page header.page-header {
+  width: 100%;
+  background-color: rgba(109, 23, 3, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: #ebbe83;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease;
+}
+
+/* Hide sidebar and center main content */
 body.city-info-page .page-container {
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 body.city-info-page .sidebar {
   display: none;
 }
 
-/* Main content centered and wider */
+/* Main content centered and slightly wider */
 body.city-info-page .content.main-only {
-  max-width: 950px; /* slightly wider */
+  max-width: 950px;
   width: 80%;
   margin: 0 auto;
   text-align: left;
@@ -285,21 +295,13 @@ body.city-info-page .content.main-only {
   color: #ebbe83 !important;
 }
 
-/* Font color for all text in this page */
-body.city-info-page,
-body.city-info-page .content,
-body.city-info-page footer,
-body.city-info-page .card-nav a {
-  color: #ebbe83 !important;
-}
-
-/* Card-Based Navigation (top, centered, single row, smaller links) */
+/* Card-Based Navigation (single row, equal cards, smaller) */
 body.city-info-page .card-nav {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap; /* single row */
+  flex-wrap: nowrap;
   gap: 15px;
-  margin: 30px auto 40px auto;
+  margin: 20px auto 40px auto;
   padding: 10px;
   max-width: 1000px;
   text-align: center;
@@ -311,8 +313,8 @@ body.city-info-page .card-nav a {
   color: #ebbe83;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1em; /* slightly smaller */
-  padding: 15px 20px; /* smaller padding */
+  font-size: 1em;
+  padding: 15px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
@@ -320,7 +322,7 @@ body.city-info-page .card-nav a {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1 1 150px; /* equal width for all cards */
+  flex: 1 1 150px;
   height: 60px;
 }
 
@@ -331,7 +333,25 @@ body.city-info-page .card-nav a:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
 }
 
-/* === Other Pages: Keep existing styles unchanged === */
+/* Footer specifically for city info page */
+body.city-info-page footer {
+  background-color: rgba(109, 23, 3, 0.8);
+  color: #ebbe83;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  border-radius: 0 0 12px 12px;
+  width: 100%;
+}
+
+/* Font color for all text in city info page */
+body.city-info-page,
+body.city-info-page .content,
+body.city-info-page .card-nav a {
+  color: #ebbe83 !important;
+}
+
+/* === Other Pages Styles Unchanged === */
 body.city-map-page .sidebar { background-color: #6d1703; }
 body.city-map-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
 body.city-map-page .content { background-color: rgba(109, 23, 3, 0.8); }
