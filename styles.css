@@ -307,7 +307,7 @@ body.city-info-page .card-nav {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
-  gap: 25px; /* more space between cards */
+  gap: 35px; /* more space between cards */
   margin: 20px auto 40px auto;
   padding: 10px 0;
   max-width: 1100px;
