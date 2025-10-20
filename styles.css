@@ -358,21 +358,38 @@ body.city-info-page .welcome-overlay {
   align-items: center;
   color: #ebbe83;
   font-family: 'Meie Script', cursive;
-  font-size: 4.5em; /* bigger text */
+  font-size: 10em; /* bigger text */
   font-weight: normal;
   text-shadow: 0 0 18px rgba(235, 190, 131, 0.9);
   z-index: 9999;
   cursor: pointer;
   animation: fadeIn 1s ease;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease, visibility 0.8s ease;
 }
 
-body.city-info-page .welcome-overlay.hidden {
+body.city-info-page .welcome-overlay.overlay-hidden {
+  transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
 }
 
-/* === Other pages (unchanged) === */
+/* wrapper box for the Welcome text */
+body.city-info-page .welcome-box {
+  background: rgba(0,0,0,0.25);
+  padding: 20px 50px;
+  border-radius: 14px;
+  border: 2px solid rgba(235,190,131,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: inline-block;
+}
+
+/* hover animation on the box */
+body.city-info-page .welcome-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+/* === Other pages (unchanged) */
 body.city-map-page .sidebar { background-color: #6d1703; }
 body.city-map-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
 body.city-map-page .content { background-color: rgba(109, 23, 3, 0.8); }
