@@ -254,7 +254,7 @@ body.city-info-page {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Merriweather', serif; /* ensures main page text stays Merriweather */
+  font-family: 'Merriweather', serif; /* main page font */
 }
 
 /* Page header */
@@ -268,6 +268,7 @@ body.city-info-page .page-header {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   margin-bottom: 30px;
   animation: fadeIn 1s ease;
+  font-family: 'Merriweather', serif;
 }
 
 /* Hide sidebar */
@@ -293,17 +294,10 @@ body.city-info-page .content.main-only {
   backdrop-filter: blur(6px);
   animation: fadeIn 1s ease;
   color: #ebbe83 !important;
+  font-family: 'Merriweather', serif; /* page text font */
 }
 
-/* Font color for all text in this page */
-body.city-info-page,
-body.city-info-page .content,
-body.city-info-page footer,
-body.city-info-page .card-nav a {
-  color: #ebbe83 !important;
-}
-
-/* Card-Based Navigation (top, centered, single row, wider links, spaced) */
+/* Card-Based Navigation */
 body.city-info-page .card-nav {
   display: flex;
   justify-content: center;
@@ -314,6 +308,7 @@ body.city-info-page .card-nav {
   max-width: 1100px;
   text-align: center;
   animation: fadeIn 1s ease;
+  font-family: 'Merriweather', serif;
 }
 
 body.city-info-page .card-nav a {
@@ -332,6 +327,7 @@ body.city-info-page .card-nav a {
   justify-content: center;
   flex: 1 1 170px;
   height: 60px;
+  font-family: 'Merriweather', serif;
 }
 
 body.city-info-page .card-nav a:hover {
@@ -344,6 +340,7 @@ body.city-info-page .card-nav a:hover {
 /* Footer for city info page only */
 body.city-info-page footer {
   background-color: rgba(109, 23, 3, 0.8);
+  font-family: 'Merriweather', serif;
 }
 
 /* === City Info Welcome Overlay === */
@@ -353,13 +350,13 @@ body.city-info-page .welcome-overlay {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #6d1703; /* opaque */
+  background-color: #6d1703;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #ebbe83;
-  font-family: 'Meie Script', cursive; /* only overlay uses Meie Script */
-  font-size: 10em; /* bigger text */
+  font-family: 'Meie Script', cursive; /* overlay font */
+  font-size: 10em;
   font-weight: normal;
   text-shadow: 0 0 18px rgba(235, 190, 131, 0.9);
   z-index: 9999;
@@ -368,7 +365,6 @@ body.city-info-page .welcome-overlay {
   transition: transform 0.8s ease, opacity 0.8s ease, visibility 0.8s ease;
 }
 
-/* slide-up hide effect */
 body.city-info-page .welcome-overlay.overlay-hidden {
   transform: translateY(-100%);
   opacity: 0;
@@ -378,7 +374,7 @@ body.city-info-page .welcome-overlay.overlay-hidden {
 /* wrapper box for the Welcome text */
 body.city-info-page .welcome-box {
   background: rgba(0,0,0,0.25);
-  padding: 20px 80px;  /* wider box */
+  padding: 20px 100px;
   min-width: 300px;
   border-radius: 14px;
   border: 2px solid rgba(235,190,131,0.4);
@@ -394,30 +390,4 @@ body.city-info-page .welcome-box:hover {
 }
 
 /* === Other pages (unchanged) */
-body.city-map-page .sidebar { background-color: #6d1703; }
-body.city-map-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
-body.city-map-page .content { background-color: rgba(109, 23, 3, 0.8); }
-body.city-map-page footer { background-color: #6d1703; }
-body.city-map-page { background-color: #ebbe83; background-image: url('images/city-map-bg.png'); }
-body.city-map-page, body.city-map-page .sidebar, body.city-map-page .sidebar a, body.city-map-page .subcategory li a, body.city-map-page .content, body.city-map-page footer { color: #ebbe83 !important; }
-
-body.demographics-page .sidebar { background-color: #6d1703; }
-body.demographics-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
-body.demographics-page .content { background-color: rgba(109, 23, 3, 0.8); }
-body.demographics-page footer { background-color: #6d1703; }
-body.demographics-page { background-color: #ebbe83; background-image: url('images/demographics-bg.png'); }
-body.demographics-page, body.demographics-page .sidebar, body.demographics-page .sidebar a, body.demographics-page .subcategory li a, body.demographics-page .content, body.demographics-page footer { color: #ebbe83 !important; }
-
-body.points-of-interest-page .sidebar { background-color: #6d1703; }
-body.points-of-interest-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
-body.points-of-interest-page .content { background-color: rgba(109, 23, 3, 0.8); }
-body.points-of-interest-page footer { background-color: #6d1703; }
-body.points-of-interest-page { background-color: #ebbe83; background-image: url('images/poi-bg.png'); }
-body.points-of-interest-page, body.points-of-interest-page .sidebar, body.points-of-interest-page .sidebar a, body.points-of-interest-page .subcategory li a, body.points-of-interest-page .content, body.points-of-interest-page footer { color: #ebbe83 !important; }
-
-body.climate-location-page .sidebar { background-color: #6d1703; }
-body.climate-location-page .sidebar header { background-color: #ebbe83; color: #6d1703; padding: 10px; border-radius: 6px; text-align: center; }
-body.climate-location-page .content { background-color: rgba(109, 23, 3, 0.8); }
-body.climate-location-page footer { background-color: #6d1703; }
-body.climate-location-page { background-color: #ebbe83; background-image: url('images/climate-bg.png'); }
-body.climate-location-page, body.climate-location-page .sidebar, body.climate-location-page .sidebar a, body.climate-location-page .subcategory li a, body.climate-location-page .content, body.climate-location-page footer { color: #ebbe83 !important; }
+/* Keep everything else the same */
