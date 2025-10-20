@@ -4,17 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our City - Riverbend University</title>
-  <link href="https://fonts.googleapis.com/css2?family=Meie+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Meie+Script&family=Merriweather&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="standard-page city-info-page">
+<body class="city-info-page">
 
+  <!-- Welcome Overlay -->
   <div class="welcome-overlay">
-  <div class="welcome-box">Welcome!</div>
-</div>
-
+    <div class="welcome-box">Welcome!</div>
+  </div>
 
   <!-- Page Header -->
   <header class="page-header">
@@ -40,12 +42,14 @@
   <footer>
     <p>&copy; 2025 Riverbend University</p>
   </footer>
+
   <!-- Welcome overlay script -->
-<script>
-  const overlay = document.querySelector('.welcome-overlay');
-  overlay.addEventListener('click', () => {
-    overlay.classList.add('overlay-hidden');
-  });
-</script>
+  <script>
+    const overlay = document.querySelector('.welcome-overlay');
+    overlay.addEventListener('click', () => {
+      overlay.classList.add('overlay-hidden');
+    });
+  </script>
+
 </body>
 </html>
