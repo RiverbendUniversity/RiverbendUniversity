@@ -254,7 +254,6 @@ body.city-info-page {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Merriweather', serif; /* ensures main page text stays Merriweather */
 }
 
 /* Page header */
@@ -292,15 +291,15 @@ body.city-info-page .content.main-only {
   padding: 60px;
   backdrop-filter: blur(6px);
   animation: fadeIn 1s ease;
-  color: #ebbe83 !important;
+  color: #ebbe83;
+  font-family: 'Merriweather', serif; /* Ensures page text uses Merriweather */
 }
 
 /* Font color for all text in this page */
 body.city-info-page,
-body.city-info-page .content,
 body.city-info-page footer,
 body.city-info-page .card-nav a {
-  color: #ebbe83 !important;
+  color: #ebbe83;
 }
 
 /* Card-Based Navigation (top, centered, single row, wider links, spaced) */
@@ -314,6 +313,7 @@ body.city-info-page .card-nav {
   max-width: 1100px;
   text-align: center;
   animation: fadeIn 1s ease;
+  font-family: 'Merriweather', serif;
 }
 
 body.city-info-page .card-nav a {
@@ -344,6 +344,7 @@ body.city-info-page .card-nav a:hover {
 /* Footer for city info page only */
 body.city-info-page footer {
   background-color: rgba(109, 23, 3, 0.8);
+  font-family: 'Merriweather', serif;
 }
 
 /* === City Info Welcome Overlay === */
@@ -358,8 +359,8 @@ body.city-info-page .welcome-overlay {
   justify-content: center;
   align-items: center;
   color: #ebbe83;
-  font-family: 'Meie Script', cursive; /* only overlay uses Meie Script */
-  font-size: 10em; /* bigger text */
+  font-family: 'Meie Script', cursive; /* overlay font */
+  font-size: 10em; 
   font-weight: normal;
   text-shadow: 0 0 18px rgba(235, 190, 131, 0.9);
   z-index: 9999;
@@ -368,7 +369,6 @@ body.city-info-page .welcome-overlay {
   transition: transform 0.8s ease, opacity 0.8s ease, visibility 0.8s ease;
 }
 
-/* slide-up hide effect */
 body.city-info-page .welcome-overlay.overlay-hidden {
   transform: translateY(-100%);
   opacity: 0;
@@ -378,7 +378,7 @@ body.city-info-page .welcome-overlay.overlay-hidden {
 /* wrapper box for the Welcome text */
 body.city-info-page .welcome-box {
   background: rgba(0,0,0,0.25);
-  padding: 20px 80px;  /* wider box */
+  padding: 20px 80px;
   min-width: 300px;
   border-radius: 14px;
   border: 2px solid rgba(235,190,131,0.4);
