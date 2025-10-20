@@ -40,6 +40,12 @@
   <footer>
     <p>&copy; 2025 Riverbend University</p>
   </footer>
-
+  <!-- Welcome overlay script -->
+<script>
+  const overlay = document.querySelector('.welcome-overlay');
+  overlay.addEventListener('click', () => {
+    overlay.classList.add('overlay-hidden');
+  });
+</script>
 </body>
 </html>
