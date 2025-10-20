@@ -254,6 +254,7 @@ body.city-info-page {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  font-family: 'Merriweather', serif; /* ensures main page text stays Merriweather */
 }
 
 /* Page header */
@@ -357,7 +358,7 @@ body.city-info-page .welcome-overlay {
   justify-content: center;
   align-items: center;
   color: #ebbe83;
-  font-family: 'Meie Script', cursive;
+  font-family: 'Meie Script', cursive; /* only overlay uses Meie Script */
   font-size: 10em; /* bigger text */
   font-weight: normal;
   text-shadow: 0 0 18px rgba(235, 190, 131, 0.9);
@@ -367,6 +368,7 @@ body.city-info-page .welcome-overlay {
   transition: transform 0.8s ease, opacity 0.8s ease, visibility 0.8s ease;
 }
 
+/* slide-up hide effect */
 body.city-info-page .welcome-overlay.overlay-hidden {
   transform: translateY(-100%);
   opacity: 0;
@@ -376,20 +378,13 @@ body.city-info-page .welcome-overlay.overlay-hidden {
 /* wrapper box for the Welcome text */
 body.city-info-page .welcome-box {
   background: rgba(0,0,0,0.25);
-  padding: 20px 80px;  /* made it wider */
-  min-width: 300px;    /* optional: ensures a minimum width */
+  padding: 20px 80px;  /* wider box */
+  min-width: 300px;
   border-radius: 14px;
   border: 2px solid rgba(235,190,131,0.4);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   display: inline-block;
   text-align: center;
-}
-
-/* overlay hidden effect (slide up) */
-body.city-info-page .welcome-overlay.overlay-hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-  visibility: hidden;
 }
 
 /* hover animation on the box */
