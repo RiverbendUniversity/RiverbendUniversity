@@ -248,11 +248,14 @@ footer {
 
 /* === City Info Page === */
 body.city-info-page {
-  background-color: #ebbe83; /* solid background for entire page */
-  background-image: none; /* removed full-page image */
+  background-color: #ebbe83; /* full page color */
+  background-image: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Hero image behind card nav only */
+/* Navigation header with background image */
 body.city-info-page .header-image {
   background-image: url('images/grove-background-index.jpeg');
   background-size: cover;
@@ -265,7 +268,7 @@ body.city-info-page .header-image {
   position: relative;
 }
 
-/* Optional overlay to make nav pop */
+/* Optional overlay for nav */
 body.city-info-page .header-image::after {
   content: '';
   position: absolute;
@@ -277,7 +280,7 @@ body.city-info-page .header-image::after {
   z-index: 1;
 }
 
-/* Card navigation */
+/* Card navigation inside header */
 body.city-info-page .header-image .card-nav {
   position: relative;
   z-index: 2;
@@ -314,7 +317,7 @@ body.city-info-page .card-nav a:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
 }
 
-/* Hide the old header */
+/* Hide old header */
 body.city-info-page .page-header {
   display: none;
 }
@@ -363,14 +366,16 @@ body.city-info-page .welcome-box:hover {
   box-shadow: 0 10px 22px rgba(0,0,0,0.35);
 }
 
-/* Main content area */
-body.city-info-page .main-columns-wrapper {
-  background-color: #ebbe83; /* full-width color behind text */
-  padding: 40px 20px;
+/* Main content centered vertically and horizontally */
+body.city-info-page .main-content-wrapper {
+  flex: 1; /* take remaining height */
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
 }
 
+/* Two-column content */
 body.city-info-page .main-columns {
   display: flex;
   justify-content: center;
@@ -407,7 +412,7 @@ body.city-info-page .sidebar-content {
 
 /* Footer */
 body.city-info-page footer {
-  background-color: #6d1703; /* match main content */
+  background-color: #6d1703;
   color: #ebbe83;
   font-family: 'Merriweather', serif;
 }
