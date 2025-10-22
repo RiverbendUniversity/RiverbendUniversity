@@ -248,23 +248,23 @@ footer {
 
 /* === City Info Page === */
 body.city-info-page {
-  background-color: #ebbe83; /* rest of page background */
+  background-color: #ebbe83; /* full-page background color for content */
 }
 
-/* Header image behind card nav */
+/* Hero image behind card nav only */
 body.city-info-page .header-image {
   background-image: url('images/grove-background-index.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 300px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-/* Optional dark overlay to make nav buttons pop */
+/* Optional overlay to make nav pop */
 body.city-info-page .header-image::after {
   content: '';
   position: absolute;
@@ -276,7 +276,7 @@ body.city-info-page .header-image::after {
   z-index: 1;
 }
 
-/* Card navigation above overlay */
+/* Card navigation */
 body.city-info-page .header-image .card-nav {
   position: relative;
   z-index: 2;
@@ -288,7 +288,6 @@ body.city-info-page .header-image .card-nav {
   padding: 10px 0;
 }
 
-/* Card Nav Buttons */
 body.city-info-page .card-nav a {
   background-color: #6d1703;
   color: #ebbe83;
@@ -314,12 +313,12 @@ body.city-info-page .card-nav a:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
 }
 
-/* Hide old header */
+/* Hide the old header */
 body.city-info-page .page-header {
   display: none;
 }
 
-/* Welcome Overlay */
+/* Welcome overlay */
 body.city-info-page .welcome-overlay {
   position: fixed;
   top: 0;
@@ -363,19 +362,23 @@ body.city-info-page .welcome-box:hover {
   box-shadow: 0 10px 22px rgba(0,0,0,0.35);
 }
 
-/* Main Two-Column Layout */
+/* Main content area */
+body.city-info-page .main-columns-wrapper {
+  background-color: #ebbe83; /* full-width color */
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
 body.city-info-page .main-columns {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin: -60px auto 40px auto; /* overlap hero slightly */
   max-width: 1200px;
-  background-color: rgba(235, 190, 131, 0.85);
-  padding: 40px;
-  border-radius: 16px;
+  width: 100%;
 }
 
-/* Main Content Box */
+/* Main content box */
 body.city-info-page .main-content {
   flex: 1;
   max-width: 550px;
@@ -388,7 +391,7 @@ body.city-info-page .main-content {
   animation: fadeIn 1s ease;
 }
 
-/* Sidebar Box */
+/* Sidebar box */
 body.city-info-page .sidebar-content {
   flex: 0.5;
   max-width: 220px;
@@ -403,6 +406,7 @@ body.city-info-page .sidebar-content {
 
 /* Footer */
 body.city-info-page footer {
-  background-color: rgba(109, 23, 3, 0.8);
+  background-color: #6d1703; /* match content style */
+  color: #ebbe83;
   font-family: 'Merriweather', serif;
 }
