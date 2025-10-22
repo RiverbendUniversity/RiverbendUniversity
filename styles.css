@@ -248,7 +248,8 @@ footer {
 
 /* === City Info Page === */
 body.city-info-page {
-  background-color: #ebbe83; /* full-page background color for content */
+  background-color: #ebbe83; /* solid background for entire page */
+  background-image: none; /* removed full-page image */
 }
 
 /* Hero image behind card nav only */
@@ -364,7 +365,7 @@ body.city-info-page .welcome-box:hover {
 
 /* Main content area */
 body.city-info-page .main-columns-wrapper {
-  background-color: #ebbe83; /* full-width color */
+  background-color: #ebbe83; /* full-width color behind text */
   padding: 40px 20px;
   display: flex;
   justify-content: center;
@@ -406,7 +407,7 @@ body.city-info-page .sidebar-content {
 
 /* Footer */
 body.city-info-page footer {
-  background-color: #6d1703; /* match content style */
+  background-color: #6d1703; /* match main content */
   color: #ebbe83;
   font-family: 'Merriweather', serif;
 }
