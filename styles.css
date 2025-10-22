@@ -248,33 +248,47 @@ footer {
 
 /* === City Info Page === */
 body.city-info-page {
-  background-color: #ebbe83;
-  background-image: linear-gradient(rgba(235, 190, 131, 0.3), rgba(235, 190, 131, 0.3)), url('images/grove-background-index.jpeg');
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-color: #ebbe83; /* rest of page background */
+}
+
+/* Header image behind card nav */
+body.city-info-page .header-image {
+  background-image: url('images/grove-background-index.jpeg');
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-/* Hide the header */
-body.city-info-page .page-header {
-  display: none;
+/* Optional dark overlay to make nav buttons pop */
+body.city-info-page .header-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(109, 23, 3, 0.4);
+  z-index: 1;
 }
 
-/* Card-Based Navigation (top, centered, single row, wider links, spaced) */
-body.city-info-page .card-nav {
+/* Card navigation above overlay */
+body.city-info-page .header-image .card-nav {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
   gap: 35px;
-  margin: 20px auto 40px auto;
-  padding: 10px 0;
+  width: 100%;
   max-width: 1100px;
-  text-align: center;
-  animation: fadeIn 1s ease;
-  font-family: 'Merriweather', serif;
+  padding: 10px 0;
 }
 
+/* Card Nav Buttons */
 body.city-info-page .card-nav a {
   background-color: #6d1703;
   color: #ebbe83;
@@ -300,13 +314,12 @@ body.city-info-page .card-nav a:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
 }
 
-/* City Info Page Footer */
-body.city-info-page footer {
-  background-color: rgba(109, 23, 3, 0.8);
-  font-family: 'Merriweather', serif;
+/* Hide old header */
+body.city-info-page .page-header {
+  display: none;
 }
 
-/* === Welcome Overlay === */
+/* Welcome Overlay */
 body.city-info-page .welcome-overlay {
   position: fixed;
   top: 0;
@@ -350,18 +363,22 @@ body.city-info-page .welcome-box:hover {
   box-shadow: 0 10px 22px rgba(0,0,0,0.35);
 }
 
-/* === CITY INFO TWO-COLUMN LAYOUT === */
+/* Main Two-Column Layout */
 body.city-info-page .main-columns {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin: 0 auto 40px auto;
+  margin: -60px auto 40px auto; /* overlap hero slightly */
   max-width: 1200px;
+  background-color: rgba(235, 190, 131, 0.85);
+  padding: 40px;
+  border-radius: 16px;
 }
 
+/* Main Content Box */
 body.city-info-page .main-content {
   flex: 1;
-  max-width: 550px;  /* narrower main text box */
+  max-width: 550px;
   background-color: rgba(109, 23, 3, 0.8);
   padding: 40px;
   border-radius: 16px;
@@ -371,9 +388,10 @@ body.city-info-page .main-content {
   animation: fadeIn 1s ease;
 }
 
+/* Sidebar Box */
 body.city-info-page .sidebar-content {
   flex: 0.5;
-  max-width: 220px;  /* narrower sidebar box */
+  max-width: 220px;
   background-color: rgba(109, 23, 3, 0.6);
   padding: 30px;
   border-radius: 12px;
@@ -381,4 +399,10 @@ body.city-info-page .sidebar-content {
   color: #ebbe83;
   font-family: 'Merriweather', serif;
   animation: fadeIn 1s ease;
+}
+
+/* Footer */
+body.city-info-page footer {
+  background-color: rgba(109, 23, 3, 0.8);
+  font-family: 'Merriweather', serif;
 }
