@@ -255,7 +255,7 @@ body.city-info-page {
   min-height: 100vh;
 }
 
-/* Header with nav background image */
+/* Navigation header with background image */
 body.city-info-page .header-image {
   background-image: url('images/grove-background-index.jpeg');
   background-size: cover;
@@ -266,9 +266,10 @@ body.city-info-page .header-image {
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom: 40px; /* spacing from text boxes */
 }
 
-/* Optional overlay */
+/* Optional overlay for nav */
 body.city-info-page .header-image::after {
   content: '';
   position: absolute;
@@ -280,7 +281,7 @@ body.city-info-page .header-image::after {
   z-index: 1;
 }
 
-/* Navigation inside header */
+/* Card navigation inside header */
 body.city-info-page .header-image .card-nav {
   position: relative;
   z-index: 2;
@@ -308,6 +309,8 @@ body.city-info-page .card-nav a {
   justify-content: center;
   flex: 1 1 170px;
   height: 60px;
+  position: relative; /* for hover image */
+  overflow: hidden;
 }
 
 body.city-info-page .card-nav a:hover {
@@ -315,6 +318,26 @@ body.city-info-page .card-nav a:hover {
   color: #ffffff;
   transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover image for City Map link (2nd link) */
+body.city-info-page .card-nav a:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/city-map.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+body.city-info-page .card-nav a:nth-child(2):hover::after {
+  opacity: 0.4;
 }
 
 /* Hide old header */
@@ -366,14 +389,13 @@ body.city-info-page .welcome-box:hover {
   box-shadow: 0 10px 22px rgba(0,0,0,0.35);
 }
 
-/* Main content wrapper - fills remaining space and centers content */
+/* Main content centered vertically and horizontally */
 body.city-info-page .main-content-wrapper {
-  flex: 1;
+  flex: 1; /* take remaining height */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  gap: 30px;
 }
 
 /* Two-column content */
@@ -411,13 +433,10 @@ body.city-info-page .sidebar-content {
   animation: fadeIn 1s ease;
 }
 
-/* Sticky Footer */
+/* Footer */
 body.city-info-page footer {
   background-color: #6d1703;
   color: #ebbe83;
   font-family: 'Merriweather', serif;
   margin-top: auto;
-  text-align: center;
-  padding: 15px;
-  border-radius: 0 0 12px 12px;
 }
