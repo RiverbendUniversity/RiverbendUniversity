@@ -1,352 +1,138 @@
 /* === GLOBAL === */
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Merriweather', serif;
   font-size: 16px;
   line-height: 1.6;
-  background-color: #002b31;
-  background-image: url('images/university-background.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  color: #e6eef6;
+  background-color: #ebbe83;
+  color: #3a1206;
   box-sizing: border-box;
 }
 
 /* === ANIMATIONS === */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === INDEX PAGE === */
-body.index-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-}
+/* === HEADER IMAGE / NAVIGATION === */
 
-body.index-page header.top-header {
-  background-color: #022125;
-  padding: 5px 0;
-  width: 100%;
-  border-radius: 0 0 12px 12px;
-}
-
-body.index-page header.top-header h1 {
-  margin: 40px 0 20px 0;
-}
-
-body.index-page nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  background-color: #022125;
-  border-radius: 8px;
-  padding: 10px 0;
-}
-
-body.index-page nav ul li a {
-  color: #8be9c2;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  text-shadow: 
-    0 0 2px rgba(139, 233, 194, 0.3),
-    0 0 4px rgba(139, 233, 194, 0.2);
-}
-
-body.index-page nav ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #ffd369;
-  transition: width 0.3s ease;
-}
-
-body.index-page nav ul li a:hover::after {
-  width: 100%;
-}
-
-body.index-page nav ul li a.active::after {
-  width: 100%;
-}
-
-body.index-page .index-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: rgba(27, 55, 58, 0.75);
-  color: #e6eef6;
-  padding: 60px;
-  margin: 40px auto;
-  border-radius: 16px;
-  max-width: 850px;
-  width: 75%;
-  text-align: left;
-  backdrop-filter: blur(6px);
-  animation: fadeIn 1s ease;
-}
-
-/* === STANDARD PAGES === */
-body.standard-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.page-container {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 20px;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.sidebar {
-  width: 240px;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(27, 55, 58, 0.9);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  flex-shrink: 0;
-  animation: fadeIn 1s ease;
-}
-
-.sidebar header {
-  font-size: 1.4em;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 18px;
-  background-color: #022125;
-  padding: 10px;
-  border-radius: 6px;
-  color: #e6eef6;
-}
-
-.page-titles ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.page-titles ul li {
-  margin-bottom: 14px;
-  position: relative;
-}
-
-.page-titles ul li a {
-  color: #8be9c2;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  position: relative;
-  transition: all 0.3s ease;
-  text-shadow: 
-    0 0 2px rgba(139, 233, 194, 0.25),
-    0 0 4px rgba(139, 233, 194, 0.15);
-}
-
-.page-titles ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #ffd369;
-  transition: width 0.3s ease;
-}
-
-.page-titles ul li a:hover::after {
-  width: 100%;
-}
-
-.page-titles ul li a.active {
-  color: #ffffff;
-  background-color: rgba(255,255,255,0.1);
-}
-
-.subcategory {
-  display: none;
-  list-style: none;
-  padding-left: 25px;
-  margin: 8px 0 10px 0;
-}
-
-.has-sub.active .subcategory {
-  display: block;
-}
-
-.subcategory li {
-  margin-bottom: 10px;
-  padding-left: 10px;
-  font-size: 0.95em;
-  color: #8be9c2;
-  transition: all 0.3s ease;
-}
-
-.subcategory li::before {
-  content: "→ ";
-  color: #ffd369;
-}
-
-.subcategory li a {
-  color: #8be9c2;
-  text-decoration: none;
-}
-
-.subcategory li a:hover {
-  color: #ffd369;
-}
-
-.content {
-  flex: 1;
-  background-color: rgba(27, 55, 58, 0.8);
-  color: #b69803;
-  padding: 35px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 1s ease;
-  min-height: 80vh;
-  overflow: visible;
-  box-sizing: border-box;
-}
-
-footer {
-  background-color: #022125;
-  color: #9fbfb0;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  border-radius: 0 0 12px 12px;
-  width: 100%;
-}
-
-/* === City Info Page === */
-body.city-info-page {
-  background-color: #ebbe83; /* full page color */
-  background-image: none;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Navigation header with background image */
-body.city-info-page .header-image {
-  background-image: url('images/grove-background-index.jpeg');
+.header-image {
+  background-image: url('images/city-background.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 250px;
+  height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-bottom: 40px; /* spacing from text boxes */
 }
 
-/* Optional overlay for nav */
-body.city-info-page .header-image::after {
+/* dark overlay */
+
+.header-image::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(109, 23, 3, 0.4);
+  background-color: rgba(109, 23, 3, 0.45);
+  top: 0;
+  left: 0;
   z-index: 1;
 }
 
-/* Card navigation inside header */
-body.city-info-page .header-image .card-nav {
+/* === NAVIGATION CARDS === */
+
+.card-nav {
   position: relative;
   z-index: 2;
   display: flex;
   justify-content: center;
-  gap: 35px;
+  gap: 30px;
   width: 100%;
   max-width: 1100px;
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 
-body.city-info-page .card-nav a {
+.card-nav a {
   background-color: #6d1703;
   color: #ebbe83;
   text-decoration: none;
   font-weight: bold;
   font-size: 1em;
-  padding: 20px 25px;
+  padding: 18px 22px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   transition: all 0.3s ease;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 1 170px;
-  height: 60px;
-  position: relative; /* for hover image */
-  overflow: hidden;
+  flex: 1 1 160px;
 }
 
-body.city-info-page .card-nav a:hover {
+.card-nav a:hover {
   background-color: #8b2405;
   color: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
 }
 
-/* Hover image for City Map link (2nd link) */
-body.city-info-page .card-nav a:nth-child(2)::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+/* === PAGE STRUCTURE === */
+
+.main-content-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.main-columns {
+  display: flex;
+  gap: 35px;
+  max-width: 1200px;
   width: 100%;
-  height: 100%;
-  background-image: url('images/city-map.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 0;
 }
 
-body.city-info-page .card-nav a:nth-child(2):hover::after {
-  opacity: 0.4;
+/* === MAIN CONTENT BOX === */
+
+.main-content {
+  flex: 1;
+  max-width: 600px;
+  background-color: rgba(109, 23, 3, 0.85);
+  padding: 40px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  color: #ebbe83;
+  animation: fadeIn 1s ease;
 }
 
-/* Hide old header */
-body.city-info-page .page-header {
-  display: none;
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  margin-top: 0;
 }
 
-/* Welcome overlay */
-body.city-info-page .welcome-overlay {
+/* === SIDEBAR === */
+
+.sidebar-content {
+  flex: 0.45;
+  max-width: 250px;
+  background-color: rgba(109, 23, 3, 0.65);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  color: #ebbe83;
+  animation: fadeIn 1s ease;
+}
+
+.sidebar-content h3 {
+  margin-top: 0;
+}
+
+/* === WELCOME OVERLAY (OPTIONAL INTRO SCREEN) === */
+
+.welcome-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -358,85 +144,66 @@ body.city-info-page .welcome-overlay {
   align-items: center;
   color: #ebbe83;
   font-family: 'Meie Script', cursive;
-  font-size: 10em;
-  font-weight: normal;
-  text-shadow: 0 0 18px rgba(235, 190, 131, 0.9);
+  font-size: 8em;
+  text-shadow: 0 0 18px rgba(235,190,131,0.9);
   z-index: 9999;
   cursor: pointer;
   animation: fadeIn 1s ease;
   transition: transform 0.8s ease, opacity 0.8s ease, visibility 0.8s ease;
 }
 
-body.city-info-page .welcome-overlay.overlay-hidden {
+.welcome-overlay.hidden {
   transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
 }
 
-body.city-info-page .welcome-box {
+.welcome-box {
   background: rgba(0,0,0,0.25);
-  padding: 20px 80px;
-  min-width: 300px;
+  padding: 25px 90px;
   border-radius: 14px;
   border: 2px solid rgba(235,190,131,0.4);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  display: inline-block;
   text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-body.city-info-page .welcome-box:hover {
+.welcome-box:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 22px rgba(0,0,0,0.35);
 }
 
-/* Main content centered vertically and horizontally */
-body.city-info-page .main-content-wrapper {
-  flex: 1; /* take remaining height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-}
+/* === FOOTER === */
 
-/* Two-column content */
-body.city-info-page .main-columns {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1200px;
-  width: 100%;
-}
-
-/* Main content box */
-body.city-info-page .main-content {
-  flex: 1;
-  max-width: 550px;
-  background-color: rgba(109, 23, 3, 0.8);
-  padding: 40px;
-  border-radius: 16px;
-  backdrop-filter: blur(6px);
-  color: #ebbe83;
-  font-family: 'Merriweather', serif;
-  animation: fadeIn 1s ease;
-}
-
-/* Sidebar box */
-body.city-info-page .sidebar-content {
-  flex: 0.5;
-  max-width: 220px;
-  background-color: rgba(109, 23, 3, 0.6);
-  padding: 30px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  color: #ebbe83;
-  font-family: 'Merriweather', serif;
-  animation: fadeIn 1s ease;
-}
-
-/* Footer */
-body.city-info-page footer {
+footer {
   background-color: #6d1703;
   color: #ebbe83;
+  text-align: center;
+  padding: 18px;
+  margin-top: 60px;
   font-family: 'Merriweather', serif;
-  margin-top: auto;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 900px) {
+
+  .main-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar-content {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .main-content {
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .card-nav {
+    flex-wrap: wrap;
+  }
+
 }
